@@ -43,7 +43,6 @@ class NidaqDevice : public IODevice {
 		MonkeyWorksTime update_period;
 		
 		bool active;
-		bool lastLeverPressValue;	
 		boost::mutex active_mutex;
 		bool deviceIOrunning;
 		
@@ -105,7 +104,7 @@ class NidaqDevice : public IODevice {
 				
 				if (doReward) {
 					//bring DO high
-					//mprintf("Yum juice!");
+					printf("Yum juice!");
 					this->pulseDOHigh(pulseDurationMS->getValue());
 				}
 			}

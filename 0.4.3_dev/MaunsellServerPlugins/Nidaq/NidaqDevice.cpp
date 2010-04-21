@@ -176,7 +176,7 @@ void NidaqDevice::(){
 void *endPulse(const shared_ptr<NidaqDevice> &gp){
 	shared_ptr <Clock> clock = Clock::instance();
     MonkeyWorksTime current = clock->getCurrentTimeUS();
-	mprintf("NidaqDevice: endPulse callback %lld",current);
+	mprintf("NidaqDevice: endPulse callback %lld\n",current);
 	gp->pulseDOLow(0);            
 	return NULL;
 }
@@ -209,12 +209,9 @@ void NidaqDevice::pulseDOHigh(int pulseLengthUS) {
 	mprintf("NidaqDevice:  schedule endPulse callback at %lld us (%lld)", current, clock->getCurrentTimeUS());
 	highTimeUS = current;
 
+	// Set the DO high
 	
-	// Set the DO highh
-	printf("Locking at %lld us\n", clock->getCurrentTimeUS());
 	NidaqDriverLock->lock();
-	printf("Got lock at %lld us\n", clock->getCurrentTimeUS());
-
 	mprintf("NidaqDevice: setting pulse high %d ms (%lld)", pulseLengthUS / 1000, clock->getCurrentTimeUS());
 	if (DAQmxFailed(niError=(DAQmxBaseWriteDigitalU32(doTask, 1, 1, 0.25, DAQmx_Val_GroupByChannel, w_data, &written, NULL))))
 	{
@@ -314,10 +311,9 @@ NidaqDevice::~NidaqDevice(){
         pulseScheduleNode->cancel();
 		pulseScheduleNode->kill();
     }
-	/* MH 100413 Cannot do this in destructor, causes crash -- if card not initialized? */
-	//pulseDOLow(0);
-	//stopDigitalOutTask();
-	//disconnectFromDevice();
+	pulseDOLow(0);
+	stopDigitalOutTask();
+	disconnectFromDevice();
 }
 
 // initialize the device (pre- channel creation/initialization
@@ -342,7 +338,7 @@ bool NidaqDevice::updateSwitch() {
 	bool switchValue = readDI();
 	
 	//tell channel to read switch
-	
+
 	leverPress->setValue(Data(switchValue));
 
 	return true;
@@ -372,20 +368,10 @@ bool NidaqDevice::attachPhysicalDevice(){                                      /
 		mprintf("NidaqDevice: attachPhysicalDevice; start DAQmxBaseResetDevice");
 	}
 	NidaqDriverLock->lock();
-
 	success = !DAQmxFailed(niError=(DAQmxBaseResetDevice("Dev1")));
 	if (!success) {
 		DAQmxBaseGetExtendedErrorInfo(errBuff, kBufferLength);
 		mprintf("NidaqDevice: attachPhysicalDevice; Failed to find device: %d %s", niError, errBuff);
-		if (niError == -200220) {
-			mprintf("NidaqDevice: retrying open");
-			success = !DAQmxFailed(niError=(DAQmxBaseResetDevice("Dev1")));
-			if (!success) {
-				DAQmxBaseGetExtendedErrorInfo(errBuff, kBufferLength);	
-				mprintf("NidaqDevice: attachPhysicalDevice; Failed to find device: %d %s", niError, errBuff);			
-			}
-		}
-		if (!success) return false;
 	}
 	NidaqDriverLock->unlock();
 	if (VERBOSE_IO_DEVICE) {
@@ -539,7 +525,7 @@ void NidaqDevice::connectToDevice() {
 void NidaqDevice::disconnectFromDevice() {
 
 	if (VERBOSE_IO_DEVICE) {
-		mprintf("NidaqDevice: disconnectFromDevice");
+		mprintf("NidaqDevice: disconnectFromDevice\n");
 	}
 	if (connected) {
 		connected = false;
@@ -552,12 +538,10 @@ void NidaqDevice::disconnectFromDevice() {
 		if( DAQmxFailed(niError=( DAQmxBaseResetDevice("Dev1") )))
 		{
 			DAQmxBaseGetExtendedErrorInfo (errBuff, kBufferLength);
-			mprintf("NidaqDevice: Error resetting device: %d %s",niError,errBuff);
+			mprintf("NidaqDevice: Error resetting device: %d %s\n",niError,errBuff);
 		}
 
 		NidaqDriverLock->unlock();
-	} else {
-		mprintf("NidaqDevice: Was not connected");
 	}
 }
 
