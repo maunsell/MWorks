@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E01072A0CA5D9EC00A28CAC /* MWVariableList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0107290CA5D9EC00A28CAC /* MWVariableList.m */; };
+		0E01072F0CA5DA2000A28CAC /* MWVarEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E01072E0CA5DA2000A28CAC /* MWVarEntry.m */; };
+		0E5505000AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */; };
+		0E5505030AADB81800987B47 /* MWMATLABWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5505020AADB81800987B47 /* MWMATLABWindowController.m */; };
+		0EABD5AA0AADC5EF00DF111C /* Main.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0EABD5A90AADC5EF00DF111C /* Main.nib */; };
+		0EB67A120AAE11E00034D377 /* MonkeyWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */; };
+		0ECE67F10BDD1DCA00E16CCF /* MATLABInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */; };
+		0ECE67F70BDD1DFC00E16CCF /* monkeyWorksStreamUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E60D49F0BDD0CEF00B5386E /* monkeyWorksStreamUtilities.c */; };
+		5CF287520994124E000C55A3 /* MonkeyWorksCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */; };
+		8197FA2711762EF500BE5111 /* libmat.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8197FA2611762EF500BE5111 /* libmat.dylib */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0E0107280CA5D9EC00A28CAC /* MWVariableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWVariableList.h; sourceTree = "<group>"; };
+		0E0107290CA5D9EC00A28CAC /* MWVariableList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWVariableList.m; sourceTree = "<group>"; };
+		0E01072D0CA5DA2000A28CAC /* MWVarEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWVarEntry.h; sourceTree = "<group>"; };
+		0E01072E0CA5DA2000A28CAC /* MWVarEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWVarEntry.m; sourceTree = "<group>"; };
+		0E5504FC0AADB7EC00987B47 /* MonkeyWorksMATLABWindow_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonkeyWorksMATLABWindow_Prefix.pch; sourceTree = "<group>"; };
+		0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = MonkeyWorksMATLABWindow.xml; sourceTree = "<group>"; };
+		0E5505010AADB81800987B47 /* MWMATLABWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MWMATLABWindowController.h; sourceTree = "<group>"; };
+		0E5505020AADB81800987B47 /* MWMATLABWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MWMATLABWindowController.m; sourceTree = "<group>"; };
+		0E60D49C0BDD0CDD00B5386E /* MATLABInterface.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MATLABInterface.h; sourceTree = "<group>"; };
+		0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 5; path = MATLABInterface.m; sourceTree = "<group>"; };
+		0E60D49F0BDD0CEF00B5386E /* monkeyWorksStreamUtilities.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = monkeyWorksStreamUtilities.c; sourceTree = "<group>"; };
+		0E60D4A00BDD0CEF00B5386E /* monkeyWorksStreamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = monkeyWorksStreamUtilities.h; sourceTree = "<group>"; };
+		0EABD5A90AADC5EF00DF111C /* Main.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Main.nib; sourceTree = "<group>"; };
+		0EFA42810DC16AE700F557A6 /* hist_example.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = hist_example.m; sourceTree = "<group>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCocoa.framework; path = /Library/Frameworks/MonkeyWorksCocoa.framework; sourceTree = "<absolute>"; };
+		5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCore.framework; path = /Library/Frameworks/MonkeyWorksCore.framework; sourceTree = "<absolute>"; };
+		686092F80AC8950400978FC3 /* MonkeyWorksMATLABWindow.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyWorksMATLABWindow.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8197FA2611762EF500BE5111 /* libmat.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; name = libmat.dylib; path = /Applications/MATLAB_R2008b.app/bin/maci/libmat.dylib; sourceTree = "<absolute>"; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				5CF287520994124E000C55A3 /* MonkeyWorksCocoa.framework in Frameworks */,
+				0EB67A120AAE11E00034D377 /* MonkeyWorksCore.framework in Frameworks */,
+				8197FA2711762EF500BE5111 /* libmat.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* MonkeyWorksRewardWindow */ = {
+			isa = PBXGroup;
+			children = (
+				8197FA2611762EF500BE5111 /* libmat.dylib */,
+				0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = MonkeyWorksRewardWindow;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA42800DC16AE700F557A6 /* MATLAB_test_files */,
+				0EABD5A90AADC5EF00DF111C /* Main.nib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0E60D49C0BDD0CDD00B5386E /* MATLABInterface.h */,
+				0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */,
+				0E5505010AADB81800987B47 /* MWMATLABWindowController.h */,
+				0E5505020AADB81800987B47 /* MWMATLABWindowController.m */,
+				0E0107280CA5D9EC00A28CAC /* MWVariableList.h */,
+				0E0107290CA5D9EC00A28CAC /* MWVariableList.m */,
+				0E01072D0CA5DA2000A28CAC /* MWVarEntry.h */,
+				0E01072E0CA5DA2000A28CAC /* MWVarEntry.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0EFA42800DC16AE700F557A6 /* MATLAB_test_files */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA42810DC16AE700F557A6 /* hist_example.m */,
+			);
+			path = MATLAB_test_files;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */,
+				5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				686092F80AC8950400978FC3 /* MonkeyWorksMATLABWindow.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E60D49F0BDD0CEF00B5386E /* monkeyWorksStreamUtilities.c */,
+				0E60D4A00BDD0CEF00B5386E /* monkeyWorksStreamUtilities.h */,
+				0E5504FC0AADB7EC00987B47 /* MonkeyWorksMATLABWindow_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* MonkeyWorksMATLABWindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MonkeyWorksMATLABWindow" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				DA1E8AF8099AD12500CDAD82 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyWorksMATLABWindow;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = MonkeyWorksRewardWindow;
+			productReference = 686092F80AC8950400978FC3 /* MonkeyWorksMATLABWindow.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MonkeyWorksMATLABWindow" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* MonkeyWorksRewardWindow */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* MonkeyWorksMATLABWindow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				0E5505000AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml in Resources */,
+				0EABD5AA0AADC5EF00DF111C /* Main.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA1E8AF8099AD12500CDAD82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# make the directory if it isnt there\nmkdir -p \"/Library/Application Support/NewClient/Plugins/\"\n# copy the framework to the proper directory\nrm -dfR \"/Library/Application Support/NewClient/Plugins/MonkeyWorksMATLABWindow.bundle\"\necho $BUILT_PRODUCTS_DIR\ncp -Rf \"$BUILT_PRODUCTS_DIR/MonkeyWorksMATLABWindow.bundle\" \"/Library/Application Support/NewClient/Plugins/\"\n\n# MH Get the GODDAMN libraries into a place where the ASININE dyld can find them\ncd \"/Library/Application Support/NewClient/Plugins/MonkeyWorksMATLABWindow.bundle/Contents/MacOS\"\ninstall_name_tool -change \"@loader_path/libmat.dylib\" \"@rpath/libmat.dylib\" MonkeyWorksMATLABWindow \ninstall_name_tool -change \"@loader_path/libeng.dylib\" \"@rpath/libeng.dylib\" MonkeyWorksMATLABWindow \ninstall_name_tool -change \"@loader_path/libmx.dylib\" \"@rpath/libmx.dylib\" MonkeyWorksMATLABWindow \n\n# end\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5505030AADB81800987B47 /* MWMATLABWindowController.m in Sources */,
+				0ECE67F10BDD1DCA00E16CCF /* MATLABInterface.m in Sources */,
+				0ECE67F70BDD1DFC00E16CCF /* monkeyWorksStreamUtilities.c in Sources */,
+				0E01072A0CA5D9EC00A28CAC /* MWVariableList.m in Sources */,
+				0E01072F0CA5DA2000A28CAC /* MWVarEntry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
+				GCC_UNROLL_LOOPS = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/MonkeyWorks/include,
+					/Library/MonkeyWorks/Matlab/MATLAB/extern/include,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = .;
+				LD_DYLIB_INSTALL_NAME = /Library/MonkeyWorks/Matlab/MATLAB/bin/maci;
+				LD_RUNPATH_SEARCH_PATHS = /Library/MonkeyWorks/Matlab/MATLAB/bin/maci;
+				LIBRARY_SEARCH_PATHS = (
+					/Library/MonkeyWorks/lib,
+					/Library/MonkeyWorks/Matlab/MATLAB/bin/maci,
+					"\"$(SYSTEM_APPS_DIR)/MATLAB_R2009b.app/bin/maci\"",
+					"\"$(SYSTEM_APPS_DIR)/MATLAB_R2008b.app/bin/maci\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lmat",
+					"-leng",
+					"-lmx",
+					"-lscarab",
+					"-headerpad_max_install_names",
+					"-rpath",
+					/Library/MonkeyWorks/Matlab/MATLAB/bin/maci,
+				);
+				PRODUCT_NAME = MonkeyWorksMATLABWindow;
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = "";
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MonkeyWorksMATLABWindow_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Library/MonkeyWorks/Matlab/MATLAB/extern/include;
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = /Library/MonkeyWorks/Matlab/MATLAB/bin/maci;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_LDFLAGS = (
+					"-lmat",
+					"-leng",
+					"-lmx",
+					"-lscarab",
+				);
+				PREBINDING = NO;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MonkeyWorksMATLABWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MonkeyWorksMATLABWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

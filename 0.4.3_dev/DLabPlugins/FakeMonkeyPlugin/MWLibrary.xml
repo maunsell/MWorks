@@ -1,0 +1,138 @@
+<MWElements>
+	<MWElement name="Fake Monkey IO Device">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>iodevice[@type='fake_monkey']</match_signature>
+
+		<!-- Inheritance -->
+		<isa>IODevice</isa>
+		
+		<description>
+			A fake monkey that has the ability to generate spikes, and continuous eye position
+		</description>
+		<icon>fakeMonkey</icon>
+
+		<!-- Payload -->
+		<code>
+			<iodevice tag="Fake Monkey" spike_rate="" priority="" type="fake_monkey" alt=""/>
+		</code>
+	</MWElement>
+	
+	<MWElement name="Fake Monkey Eye Channel">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>iochannel[@type='eye_movement']</match_signature>
+
+		<!-- Inheritance -->
+		<isa>IOChannel</isa>
+
+		<!-- Placement rules -->
+		<allowed_parent>Fake Monkey IO Device</allowed_parent>
+		
+		<description>
+			This channel provides fake raw horizontal and vertical eye position data (in degrees).
+		</description>
+		
+		<!-- Payload -->
+		<code>
+            <iochannel tag="Eye" type="eye_movement" eye_v="" eye_h="" data_interval="1ms" update_interval="10ms"/>
+		</code>
+	</MWElement>	
+
+	<MWElement name="Fake Monkey Juice Channel">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>iochannel[@type='juice']</match_signature>
+
+		<!-- Inheritance -->
+		<isa>IOChannel</isa>
+
+		<!-- Placement rules -->
+		<allowed_parent>Fake Monkey IO Device</allowed_parent>
+		
+		<description>
+			This channel allows you to give a fake monkey juice.
+		</description>
+		
+		<!-- Payload -->
+		<code>
+     <iochannel tag="Juice" variable="" type="juice"/>
+ 		</code>
+	</MWElement>	
+
+	<MWElement name="Fake Monkey Spike Channel">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>iochannel[@type='spike']</match_signature>
+
+		<!-- Inheritance -->
+		<isa>IOChannel</isa>
+
+		<!-- Placement rules -->
+		<allowed_parent>Fake Monkey IO Device</allowed_parent>
+		
+		<description>
+			This channel generates fake spikes at a Poisson rate of 'spike_rate' spikes per second.
+		</description>
+		
+		<!-- Payload -->
+		<code>
+            <iochannel tag="Spike" type="spike" variable=""/>
+ 		</code>
+	</MWElement>	
+
+	<MWElement name="Fake Monkey Fixate">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>action[@type='fake_monkey_fixate']</match_signature>
+		
+		<!-- Inheritance -->
+		<isa>Action</isa>
+		
+		<!-- Information for display in the GUI -->
+		<icon>fakeMonkey</icon>
+		<description>
+			Causes the fake monkey to fixate at the current eye position for 'duration' amount of time
+		</description>
+		
+		<!-- Payload -->
+		<code>
+			<action type="fake_monkey_fixate" tag="Fake Monkey Fixate" duration="0" fake_monkey=""/>
+		</code>
+	</MWElement>
+
+	<MWElement name="Fake Monkey Saccade">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>action[@type='fake_monkey_saccade_to_location']</match_signature>
+		
+		<!-- Inheritance -->
+		<isa>Action</isa>
+		
+		<!-- Information for display in the GUI -->
+		<icon>fakeMonkey</icon>
+		<description>
+			Causes the fake monkey to saccade to the specified location
+		</description>
+		
+		<!-- Payload -->
+		<code>
+			<action type="fake_monkey_saccade_to_location" tag="Fake Monkey Saccade" h="0" v="0" fake_monkey=""/>
+		</code>
+	</MWElement>
+
+	<MWElement name="Fake Monkey Saccade and Fixate">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>action[@type='fake_monkey_saccade_and_fixate']</match_signature>
+		
+		<!-- Inheritance -->
+		<isa>Action</isa>
+		
+		<!-- Information for display in the GUI -->
+		<icon>fakeMonkey</icon>
+		<description>
+			Causes the fake monkey to saccade to the specified location and fixate for the specified amount of time
+		</description>
+		
+		<!-- Payload -->
+		<code>
+			<action type="fake_monkey_saccade_and_fixate" tag="Fake Monkey Saccade and Fixate" h="0" v="0" duration="0" fake_monkey=""/>
+		</code>
+	</MWElement>
+
+
+	</MWElements>

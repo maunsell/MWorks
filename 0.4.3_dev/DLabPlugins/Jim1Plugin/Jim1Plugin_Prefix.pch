@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Jim1Plugins' target in the 'Jim1Plugins' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

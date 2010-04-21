@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ ! -n "$1" ]
+then
+  echo "Usage: fast_build_script <email address>";
+  exit -1;
+fi  
+
+MAIL_RESULT=$1
+
+
+#  this script needs to live in the ~mwrt directory on the nightly build machine
+
+echo "starting fast regressions"
+
+/usr/local/bin/svn up --username labuser --password labuser --no-auth-cache --non-interactive /Users/mwrt/sandbox/MonkeyWorks/trunk
+
+# run the regression tests
+/Users/mwrt/sandbox/MonkeyWorks/trunk/MonkeyWorksTools/MonkeyWorksRegression.pl --build --test --mailto=$MAIL_RESULT /Users/mwrt/sandbox/MonkeyWorks/trunk/
+
+# update the build scripts
+/bin/cp -f /Users/mwrt/sandbox/MonkeyWorks/trunk/MonkeyWorksTools/nightly_build_script /Users/mwrt/nightly_build_script
+/bin/cp -f /Users/mwrt/sandbox/MonkeyWorks/trunk/MonkeyWorksTools/fast_build_script /Users/mwrt/fast_build_script

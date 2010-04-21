@@ -1,0 +1,65 @@
+INSTALL_DIR=/groups/dicarlo/bkennedy_working/WORK
+SCARAB=Scarab-0.1.00d19
+BOOST=boost-1_36
+BOOST_MAIN=boost_1_36_0
+
+all: req-libs scarab tools
+
+install: all
+
+clean: clean-req-libs clean-scarab clean-tools
+
+FORCE:
+
+# scarab
+scarab: FORCE
+	(cd Scarab/$(SCARAB)/c; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" install)
+
+clean-scarab: FORCE
+	(cd Scarab/$(SCARAB)/c; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" clean)
+
+#required libraries
+req-libs: FORCE
+	rm -rf $(INSTALL_DIR)/include/$(BOOST)
+	rm -rf $(INSTALL_DIR)/include/boost
+	(cd MonkeyWorksMacRequirements/$(BOOST_MAIN); make -f Makefile.linux_analysis all)
+	(cd MonkeyWorksMacRequirements/$(BOOST_MAIN); make -f Makefile.linux_analysis install)
+	mv $(INSTALL_DIR)/include/$(BOOST)/boost $(INSTALL_DIR)/include/boost 
+	rm -rf $(INSTALL_DIR)/include/$(BOOST)
+	rm -f $(INSTALL_DIR)/lib/libboost*.so
+	rm -f $(INSTALL_DIR)/lib/libboost*.so.*
+
+clean-req-libs: FORCE
+	(cd MonkeyWorksMacRequirements/$(BOOST_MAIN); make -f Makefile.linux_analysis clean)
+	rm -rf MonkeyWorksMacRequirements/$(BOOST_MAIN)/bin.v2
+	rm -rf $(INSTALL_DIR)/include/$(BOOST)
+	rm -rf $(INSTALL_DIR)/include/boost
+	rm -rf $(INSTALL_DIR)/lib/libboost*
+
+
+
+#tools
+tools: dfindexer monkeyworks-stream-utilities matlab-data-reader 
+clean-tools: clean-dfindexer clean-monkeyworks-stream-utilities clean-matlab-data-reader
+
+dfindexer: scarab
+	(cd MonkeyWorksTools/DataFileIndexer; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" install)
+
+clean-dfindexer: FORCE
+	(cd MonkeyWorksTools/DataFileIndexer; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" clean)
+
+monkeyworks-stream-utilities: scarab dfindexer
+	(cd MonkeyWorksTools/MonkeyWorksStreamUtilities; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" install)
+
+clean-monkeyworks-stream-utilities: FORCE
+	(cd MonkeyWorksTools/MonkeyWorksStreamUtilities; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" clean)
+
+matlab-data-reader: scarab monkeyworks-stream-utilities dfindexer
+	(cd MonkeyWorksTools/MatlabDataReader; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" install)
+
+clean-matlab-data-reader: FORCE
+	(cd MonkeyWorksTools/MatlabDataReader; make -f Makefile.linux_analysis "INSTALL_DIR=$(INSTALL_DIR)" clean)
+
+
+
+

@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Development;
+		activeTarget = 8D5B49AC048680CD000E48DA /* NidaqPlugin */;
+		breakpoints = (
+		);
+		codeSenseManager = 8197F3AC11740E6100BE5111 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					664,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					301,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 293499999;
+			PBXWorkspaceStateSaveDate = 293499999;
+		};
+		perUserProjectItems = {
+			815540681176662900C5D390 = 815540681176662900C5D390 /* PBXTextBookmark */;
+			815540691176662900C5D390 = 815540691176662900C5D390 /* PBXTextBookmark */;
+			8155406A1176662900C5D390 = 8155406A1176662900C5D390 /* PBXTextBookmark */;
+			8155406B1176662900C5D390 = 8155406B1176662900C5D390 /* PBXTextBookmark */;
+			8155406C1176662900C5D390 = 8155406C1176662900C5D390 /* PBXTextBookmark */;
+			8155406E1176662900C5D390 = 8155406E1176662900C5D390 /* PBXTextBookmark */;
+			815540721176662900C5D390 = 815540721176662900C5D390 /* PBXTextBookmark */;
+			815540741176662900C5D390 = 815540741176662900C5D390 /* PBXTextBookmark */;
+			815540751176662900C5D390 = 815540751176662900C5D390 /* PBXTextBookmark */;
+			8155407A1176662900C5D390 = 8155407A1176662900C5D390 /* PBXTextBookmark */;
+			8155407C1176662900C5D390 = 8155407C1176662900C5D390 /* PBXTextBookmark */;
+			815541AA1177960B00C5D390 = 815541AA1177960B00C5D390 /* PBXTextBookmark */;
+			8158B486117905EA001D41B6 = 8158B486117905EA001D41B6 /* PBXTextBookmark */;
+			8158B7A8117AA18E001D41B6 = 8158B7A8117AA18E001D41B6 /* PBXTextBookmark */;
+			8197F4091174E70900BE5111 = 8197F4091174E70900BE5111 /* PBXTextBookmark */;
+			8197F40C1174E70900BE5111 = 8197F40C1174E70900BE5111 /* PBXTextBookmark */;
+			8197F42A1174E74800BE5111 = 8197F42A1174E74800BE5111 /* PBXTextBookmark */;
+			8197F42B1174E74800BE5111 = 8197F42B1174E74800BE5111 /* PBXTextBookmark */;
+			81BCE831117E695C00C0AC5B = 81BCE831117E695C00C0AC5B /* PBXTextBookmark */;
+			81BCE836117E698000C0AC5B = 81BCE836117E698000C0AC5B /* PBXTextBookmark */;
+			81BCE837117E698000C0AC5B = 81BCE837117E698000C0AC5B /* PBXTextBookmark */;
+			81BCE838117E698000C0AC5B = 81BCE838117E698000C0AC5B /* PBXTextBookmark */;
+			81BCE839117E698000C0AC5B = 81BCE839117E698000C0AC5B /* PBXTextBookmark */;
+		};
+		sourceControlManager = 8197F3AB11740E6100BE5111 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32DBCF630370AF2F00C91783 /* NidaqPlugin_Prefix.pch */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = NidaqPlugin_Prefix.pch;
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/NidaqPlugin_Prefix.pch";
+		sourceTree = "<absolute>";
+	};
+	5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = "LabJack-U6-Plugin";
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/LabJack-U6-Plugin";
+		sourceTree = "<absolute>";
+	};
+	5C4B0A5C0DC791D4001BC518 /* NidaqDevice.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = NidaqDevice.h;
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/NidaqDevice.h";
+		sourceTree = "<absolute>";
+	};
+	5C4B0ADC0DC793E2001BC518 /* NidaqPlugin.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = NidaqPlugin.h;
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/NidaqPlugin.h";
+		sourceTree = "<absolute>";
+	};
+	5C4B0ADD0DC793E2001BC518 /* NidaqPlugin.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = NidaqPlugin.cpp;
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/NidaqPlugin.cpp";
+		sourceTree = "<absolute>";
+	};
+	5CFC67A50F2A848000552431 /* Everything */ = {
+		activeExec = 0;
+	};
+	815540681176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCE4B76910F12695000BDC69 /* NIDAQmxBase.h */;
+		name = "NIDAQmxBase.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1532;
+		vrLoc = 0;
+	};
+	815540691176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32DBCF630370AF2F00C91783 /* NidaqPlugin_Prefix.pch */;
+		name = "NidaqPlugin_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 166;
+		vrLoc = 0;
+	};
+	8155406A1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADD0DC793E2001BC518 /* NidaqPlugin.cpp */;
+		name = "NidaqPlugin.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	8155406B1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADC0DC793E2001BC518 /* NidaqPlugin.h */;
+		name = "NidaqPlugin.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 382;
+		vrLoc = 0;
+	};
+	8155406C1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8155406D1176662900C5D390 /* GenericData.h */;
+		name = "GenericData.h: 42";
+		rLen = 0;
+		rLoc = 1155;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 438;
+	};
+	8155406D1176662900C5D390 /* GenericData.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GenericData.h;
+		path = /Library/Frameworks/MonkeyWorksCore.framework/Versions/A/Headers/GenericData.h;
+		sourceTree = "<absolute>";
+	};
+	8155406E1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8155406F1176662900C5D390 /* GenericVariable.h */;
+		name = "GenericVariable.h: 173";
+		rLen = 0;
+		rLoc = 5696;
+		rType = 0;
+		vrLen = 1470;
+		vrLoc = 4927;
+	};
+	8155406F1176662900C5D390 /* GenericVariable.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GenericVariable.h;
+		path = /Library/Frameworks/MonkeyWorksCore.framework/Versions/A/Headers/GenericVariable.h;
+		sourceTree = "<absolute>";
+	};
+	815540721176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADD0DC793E2001BC518 /* NidaqPlugin.cpp */;
+		name = "NidaqPlugin.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	815540741176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32DBCF630370AF2F00C91783 /* NidaqPlugin_Prefix.pch */;
+		name = "NidaqPlugin_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 166;
+		vrLoc = 0;
+	};
+	815540751176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCE4B76910F12695000BDC69 /* NIDAQmxBase.h */;
+		name = "NIDAQmxBase.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1532;
+		vrLoc = 0;
+	};
+	8155407A1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8155407B1176662900C5D390 /* GenericData.h */;
+		name = "GenericData.h: 42";
+		rLen = 0;
+		rLoc = 1155;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 438;
+	};
+	8155407B1176662900C5D390 /* GenericData.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GenericData.h;
+		path = /Library/Frameworks/MonkeyWorksCore.framework/Versions/A/Headers/GenericData.h;
+		sourceTree = "<absolute>";
+	};
+	8155407C1176662900C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "NidaqDevice.cpp: 346";
+		rLen = 8;
+		rLoc = 9793;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 9275;
+	};
+	815541AA1177960B00C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5C0DC791D4001BC518 /* NidaqDevice.h */;
+		name = "NidaqDevice.h: 35";
+		rLen = 0;
+		rLoc = 767;
+		rType = 0;
+		vrLen = 1103;
+		vrLoc = 1116;
+	};
+	8158B486117905EA001D41B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "NidaqDevice.cpp: 247";
+		rLen = 6;
+		rLoc = 6985;
+		rType = 0;
+		vrLen = 1546;
+		vrLoc = 6302;
+	};
+	8158B7A8117AA18E001D41B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "NidaqDevice.cpp: 346";
+		rLen = 0;
+		rLoc = 9807;
+		rType = 0;
+		vrLen = 1139;
+		vrLoc = 9275;
+	};
+	8197F3AB11740E6100BE5111 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryName = "MWK Local";
+		};
+	};
+	8197F3AC11740E6100BE5111 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	8197F4091174E70900BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FC2E0A0110D5C1840040B055 /* MWLibrary.xml */;
+		name = "MWLibrary.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 0;
+	};
+	8197F40C1174E70900BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FC2E0A0110D5C1840040B055 /* MWLibrary.xml */;
+		name = "MWLibrary.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 0;
+	};
+	8197F42A1174E74800BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5C0DC791D4001BC518 /* NidaqDevice.h */;
+		name = "NidaqDevice.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 420;
+		vrLoc = 0;
+	};
+	8197F42B1174E74800BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADC0DC793E2001BC518 /* NidaqPlugin.h */;
+		name = "NidaqPlugin.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 245;
+		vrLoc = 0;
+	};
+	81BCE831117E695C00C0AC5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "NidaqDevice.cpp: 346";
+		rLen = 0;
+		rLoc = 9807;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 9275;
+	};
+	81BCE836117E698000C0AC5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "LabJack-U6-Plugin: 346";
+		rLen = 0;
+		rLoc = 9807;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 9275;
+	};
+	81BCE837117E698000C0AC5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADD0DC793E2001BC518 /* NidaqPlugin.cpp */;
+		name = "NidaqPlugin.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	81BCE838117E698000C0AC5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0A5B0DC791D4001BC518 /* LabJack-U6-Plugin */;
+		name = "LabJack-U6-Plugin: 346";
+		rLen = 0;
+		rLoc = 9807;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 9275;
+	};
+	81BCE839117E698000C0AC5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5C4B0ADD0DC793E2001BC518 /* NidaqPlugin.cpp */;
+		name = "NidaqPlugin.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	8D5B49AC048680CD000E48DA /* NidaqPlugin */ = {
+		activeExec = 0;
+	};
+	FC2E0A0110D5C1840040B055 /* MWLibrary.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {852, 280}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 568}";
+		};
+	};
+	FCE4B76910F12695000BDC69 /* NIDAQmxBase.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = NIDAQmxBase.h;
+		path = "/Users/histed/MonkeyWorks-trunk/Devices/LabJackU6/NIDAQmxBase.h";
+		sourceTree = "<absolute>";
+	};
+}

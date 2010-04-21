@@ -1,0 +1,44 @@
+<MWElements>
+	<MWElement name="Movie Stimulus">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>stimulus[@type="movie"]</match_signature>
+		
+		<isa>Stimulus</isa>
+		
+		<description>
+			A movie stimulus
+			</description>
+		
+		<!-- Payload -->
+		<code>
+        <stimulus type="movie" tag="" stimulus_group="" frames_per_second="10" movie_stats="" error_reporting=""/>
+		</code>
+		</MWElement>
+	
+	<MWElement name="Play Movie">
+		<match_signature>action[@type='play_movie']</match_signature>
+		<isa>Action</isa>
+		
+		<description>
+			Start playing a movie stimulus
+			</description>
+		
+		<code>
+			<action tag="Play movie" movie="" type="play_movie"/>
+			</code>
+		</MWElement>
+	
+	<MWElement name="Stop Movie">
+		<match_signature>action[@type='stop_movie']</match_signature>
+		<isa>Action</isa>
+		
+		<description>
+			Stop playing a movie stimulus
+			</description>
+		
+		<code>
+			<action tag="Stop movie" movie="" type="stop_movie"/>
+			</code>
+		</MWElement>
+	
+	</MWElements>

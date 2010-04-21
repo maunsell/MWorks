@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E9862DC0F167B330060B97D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9862DB0F167B330060B97D /* OpenGL.framework */; };
+		5C8E4A69098FA2A600EB44CA /* Main.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8E4A68098FA2A600EB44CA /* Main.nib */; };
+		5C8E4A6D098FA6FF00EB44CA /* MWPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E4A6C098FA6FF00EB44CA /* MWPlotView.m */; };
+		5C8E4A7B098FB02400EB44CA /* MWEyeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E4A7A098FB02400EB44CA /* MWEyeWindowController.m */; };
+		5CF2858B099402F4000C55A3 /* MWEyeSamplePlotElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF28589099402F4000C55A3 /* MWEyeSamplePlotElement.m */; };
+		5CF287520994124E000C55A3 /* MonkeyWorksCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */; };
+		68D292A10AF8E8AE00E9A885 /* MWEyeWindowOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D292A00AF8E8AE00E9A885 /* MWEyeWindowOptionController.m */; };
+		68D292E20AF8EB8900E9A885 /* OptionWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 68D292E10AF8EB8900E9A885 /* OptionWindow.nib */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		B283771B0A8A951400358169 /* MWStimulusPlotElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B283771A0A8A951400358169 /* MWStimulusPlotElement.m */; };
+		B2F32F320A9BA48700D8EE53 /* MonkeyWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0E9862DB0F167B330060B97D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* MonkeyWorksEyeWindow_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkeyWorksEyeWindow_Prefix.pch; sourceTree = "<group>"; };
+		5C10618C09904FE9007A63F8 /* MWPlotViewElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPlotViewElement.h; sourceTree = "<group>"; };
+		5C8E4A68098FA2A600EB44CA /* Main.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Main.nib; sourceTree = "<group>"; };
+		5C8E4A6B098FA6FF00EB44CA /* MWPlotView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MWPlotView.h; sourceTree = "<group>"; };
+		5C8E4A6C098FA6FF00EB44CA /* MWPlotView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MWPlotView.m; sourceTree = "<group>"; };
+		5C8E4A79098FB02400EB44CA /* MWEyeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MWEyeWindowController.h; sourceTree = "<group>"; };
+		5C8E4A7A098FB02400EB44CA /* MWEyeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MWEyeWindowController.m; sourceTree = "<group>"; };
+		5CF28588099402F4000C55A3 /* MWEyeSamplePlotElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWEyeSamplePlotElement.h; sourceTree = "<group>"; };
+		5CF28589099402F4000C55A3 /* MWEyeSamplePlotElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWEyeSamplePlotElement.m; sourceTree = "<group>"; };
+		5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCocoa.framework; path = /Library/Frameworks/MonkeyWorksCocoa.framework; sourceTree = "<absolute>"; };
+		5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCore.framework; path = /Library/Frameworks/MonkeyWorksCore.framework; sourceTree = "<absolute>"; };
+		686E22AF0AC84B19003EFDDA /* MonkeyWorksEyeWindow.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyWorksEyeWindow.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D2929F0AF8E8AE00E9A885 /* MWEyeWindowOptionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWEyeWindowOptionController.h; sourceTree = "<group>"; };
+		68D292A00AF8E8AE00E9A885 /* MWEyeWindowOptionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWEyeWindowOptionController.m; sourceTree = "<group>"; };
+		68D292E10AF8EB8900E9A885 /* OptionWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = OptionWindow.nib; sourceTree = "<group>"; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28377190A8A951400358169 /* MWStimulusPlotElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWStimulusPlotElement.h; sourceTree = "<group>"; };
+		B283771A0A8A951400358169 /* MWStimulusPlotElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWStimulusPlotElement.m; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				5CF287520994124E000C55A3 /* MonkeyWorksCocoa.framework in Frameworks */,
+				B2F32F320A9BA48700D8EE53 /* MonkeyWorksCore.framework in Frameworks */,
+				0E9862DC0F167B330060B97D /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* MonkeyWorksEyeWindow */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = MonkeyWorksEyeWindow;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0E9862DB0F167B330060B97D /* OpenGL.framework */,
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C8E4A68098FA2A600EB44CA /* Main.nib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				68D292E10AF8EB8900E9A885 /* OptionWindow.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				68D2929F0AF8E8AE00E9A885 /* MWEyeWindowOptionController.h */,
+				68D292A00AF8E8AE00E9A885 /* MWEyeWindowOptionController.m */,
+				B28377190A8A951400358169 /* MWStimulusPlotElement.h */,
+				B283771A0A8A951400358169 /* MWStimulusPlotElement.m */,
+				5C8E4A6B098FA6FF00EB44CA /* MWPlotView.h */,
+				5C8E4A6C098FA6FF00EB44CA /* MWPlotView.m */,
+				5C8E4A79098FB02400EB44CA /* MWEyeWindowController.h */,
+				5C8E4A7A098FB02400EB44CA /* MWEyeWindowController.m */,
+				5CF28589099402F4000C55A3 /* MWEyeSamplePlotElement.m */,
+				5C10618C09904FE9007A63F8 /* MWPlotViewElement.h */,
+				5CF28588099402F4000C55A3 /* MWEyeSamplePlotElement.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CF2875F099412A7000C55A3 /* MonkeyWorksCore.framework */,
+				5CF287500994124E000C55A3 /* MonkeyWorksCocoa.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				686E22AF0AC84B19003EFDDA /* MonkeyWorksEyeWindow.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* MonkeyWorksEyeWindow_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* MonkeyWorksEyeWindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MonkeyWorksEyeWindow" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				DA1E8AF8099AD12500CDAD82 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyWorksEyeWindow;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = MonkeyWorksEyeWindow;
+			productReference = 686E22AF0AC84B19003EFDDA /* MonkeyWorksEyeWindow.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MonkeyWorksEyeWindow" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* MonkeyWorksEyeWindow */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* MonkeyWorksEyeWindow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				5C8E4A69098FA2A600EB44CA /* Main.nib in Resources */,
+				68D292E20AF8EB8900E9A885 /* OptionWindow.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA1E8AF8099AD12500CDAD82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/tcsh;
+			shellScript = "# make the directory if it isnt there\nmkdir \"/Library/Application Support/NewClient/Plugins\"\n# copy the framework to the proper directory\nrm -dfR \"/Library/Application Support/NewClient/Plugins/MonkeyWorksEyeWindow.bundle\"\necho $BUILT_PRODUCTS_DIR\ncp -Rf \"$BUILT_PRODUCTS_DIR/MonkeyWorksEyeWindow.bundle\" \"/Library/Application Support/NewClient/Plugins\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C8E4A6D098FA6FF00EB44CA /* MWPlotView.m in Sources */,
+				5C8E4A7B098FB02400EB44CA /* MWEyeWindowController.m in Sources */,
+				5CF2858B099402F4000C55A3 /* MWEyeSamplePlotElement.m in Sources */,
+				B283771B0A8A951400358169 /* MWStimulusPlotElement.m in Sources */,
+				68D292A10AF8E8AE00E9A885 /* MWEyeWindowOptionController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MonkeyWorksEyeWindow_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = MonkeyWorksEyeWindow;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks/;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Library/MonkeyWorks/include;
+				PREBINDING = NO;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MonkeyWorksEyeWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MonkeyWorksEyeWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

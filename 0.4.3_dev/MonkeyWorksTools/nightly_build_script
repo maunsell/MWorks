@@ -1,0 +1,71 @@
+#!/bin/sh
+
+#  this script needs to live in the ~mwrt directory on the nightly build machine
+
+if [ ! -n "$1" ]
+then
+  echo "Usage: nightly_build_script <email address>";
+  exit -1;
+fi  
+
+MAIL_RESULT=$1
+
+# remove existing sandbox
+echo "removing /Users/mwrt/sandbox/MonkeyWorks_trunk..."
+/bin/rm -rf /Users/mwrt/sandbox/MonkeyWorks_trunk
+echo "removing /Library/Scarab.framework..."
+/bin/rm -rf /Library/Scarab.framework
+echo "removing /Library/MonkeyWorksCore.framework..."
+/bin/rm -rf /Library/MonkeyWorksCore.framework
+echo "removing /Library/MonkeyWorksCocoa.framework..."
+/bin/rm -rf /Library/MonkeyWorksCocoa.framework
+echo "removing /Applications/MonkeyWorksEditor.app..."
+/bin/rm -rf /Applications/MonkeyWorksEditor.app
+echo "removing /Applications/MonkeyWorksClient.app..."
+/bin/rm -rf /Applications/MonkeyWorksClient.app
+echo "removing /Applications/MonkeyWorksServer.app..."
+/bin/rm -rf /Applications/MonkeyWorksServer.app
+
+# make a new sandbox
+echo "checking out new version of MonkeyWorks"
+
+mkdir -p /Users/mwrt/sandbox/MonkeyWorks_trunk
+/usr/local/bin/svn co --username labuser --password labuser --non-interactive --no-auth-cache https://svn6.cvsdude.com/dicarlolab/MonkeyWorks/trunk /Users/mwrt/sandbox/MonkeyWorks_trunk
+
+
+echo "starting nightly regressions"
+
+# run the regression tests
+/Users/mwrt/sandbox/MonkeyWorks_trunk/MonkeyWorksTools/MonkeyWorksRegression.pl -b -i -t --mailto=$MAIL_RESULT --version=trunk /Users/mwrt/sandbox/MonkeyWorks_trunk/
+
+# remove existing sandbox
+echo "removing /Users/mwrt/sandbox/MonkeyWorks..."
+/bin/rm -rf /Users/mwrt/sandbox/MonkeyWorks
+echo "removing /Library/Scarab.framework..."
+/bin/rm -rf /Library/Scarab.framework
+echo "removing /Library/MonkeyWorksCore.framework..."
+/bin/rm -rf /Library/MonkeyWorksCore.framework
+echo "removing /Library/MonkeyWorksCocoa.framework..."
+/bin/rm -rf /Library/MonkeyWorksCocoa.framework
+echo "removing /Applications/MonkeyWorksEditor.app..."
+/bin/rm -rf /Applications/MonkeyWorksEditor.app
+echo "removing /Applications/MonkeyWorksClient.app..."
+/bin/rm -rf /Applications/MonkeyWorksClient.app
+echo "removing /Applications/MonkeyWorksServer.app..."
+/bin/rm -rf /Applications/MonkeyWorksServer.app
+
+# make a new sandbox
+echo "checking out new version of MonkeyWorks"
+
+mkdir -p /Users/mwrt/sandbox/MonkeyWorks
+/usr/local/bin/svn co --username labuser --password labuser --non-interactive --no-auth-cache https://svn6.cvsdude.com/dicarlolab/MonkeyWorks/branches/0.3.1_dev /Users/mwrt/sandbox/MonkeyWorks
+
+
+echo "starting nightly regressions"
+
+# run the regression tests
+/Users/mwrt/sandbox/MonkeyWorks_trunk/MonkeyWorksTools/MonkeyWorksRegression.pl -b -i -t --mailto=$MAIL_RESULT --version=0.3.1 /Users/mwrt/sandbox/MonkeyWorks/
+
+# update the build scripts
+/bin/cp -f /Users/mwrt/sandbox/MonkeyWorks_trunk/MonkeyWorksTools/nightly_build_script /Users/mwrt/nightly_build_script
+/bin/cp -f /Users/mwrt/sandbox/MonkeyWorks_trunk/MonkeyWorksTools/fast_build_script /Users/mwrt/fast_build_script

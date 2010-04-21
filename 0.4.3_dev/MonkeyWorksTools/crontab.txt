@@ -1,0 +1,2 @@
+15 01 * * * /Users/mwrt/nightly_build_script > /Users/mwrt/temp_nbs.txt
+

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'MonkeyWorksRewardWindow' target in the 'MonkeyWorksRewardWindow' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

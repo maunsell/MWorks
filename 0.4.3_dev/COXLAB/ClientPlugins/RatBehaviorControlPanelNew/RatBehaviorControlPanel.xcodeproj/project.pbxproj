@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C6C0EC30D615B51001787A8 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0EC20D615B51001787A8 /* Main.xib */; };
+		5C6C0ECF0D615F80001787A8 /* TB_Step.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0EC90D615F80001787A8 /* TB_Step.tiff */; };
+		5C6C0ED00D615F80001787A8 /* TB_Run.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0ECA0D615F80001787A8 /* TB_Run.tiff */; };
+		5C6C0ED10D615F80001787A8 /* TB_Pause.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0ECB0D615F80001787A8 /* TB_Pause.tiff */; };
+		5C6C0ED20D615F80001787A8 /* TB_Stop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0ECC0D615F80001787A8 /* TB_Stop.tiff */; };
+		5C6C0ED30D615F80001787A8 /* TB_StepOver.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0ECD0D615F80001787A8 /* TB_StepOver.tiff */; };
+		5C6C0ED40D615F80001787A8 /* TB_Continue.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C0ECE0D615F80001787A8 /* TB_Continue.tiff */; };
+		5C6C0EE10D616513001787A8 /* RatBehaviorControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C0EE00D616513001787A8 /* RatBehaviorControlPanelController.m */; };
+		5C6C0EF30D61676F001787A8 /* MonkeyWorksCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6C0EF20D61676F001787A8 /* MonkeyWorksCocoa.framework */; };
+		5C7A9B210D63E72100C3EE80 /* RatBehaviorControlPanel.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A9B200D63E72100C3EE80 /* RatBehaviorControlPanel.xml */; };
+		5CAE9AF80DD358E5006C4E49 /* StaircaseStateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE9AF70DD358E5006C4E49 /* StaircaseStateValueTransformer.m */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* RatBehaviorControlPanel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatBehaviorControlPanel_Prefix.pch; sourceTree = "<group>"; };
+		5C6C0EC20D615B51001787A8 /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
+		5C6C0EC90D615F80001787A8 /* TB_Step.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Step.tiff; sourceTree = "<group>"; };
+		5C6C0ECA0D615F80001787A8 /* TB_Run.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Run.tiff; sourceTree = "<group>"; };
+		5C6C0ECB0D615F80001787A8 /* TB_Pause.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Pause.tiff; sourceTree = "<group>"; };
+		5C6C0ECC0D615F80001787A8 /* TB_Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Stop.tiff; sourceTree = "<group>"; };
+		5C6C0ECD0D615F80001787A8 /* TB_StepOver.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_StepOver.tiff; sourceTree = "<group>"; };
+		5C6C0ECE0D615F80001787A8 /* TB_Continue.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Continue.tiff; sourceTree = "<group>"; };
+		5C6C0EDF0D616513001787A8 /* RatBehaviorControlPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatBehaviorControlPanelController.h; sourceTree = "<group>"; };
+		5C6C0EE00D616513001787A8 /* RatBehaviorControlPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatBehaviorControlPanelController.m; sourceTree = "<group>"; };
+		5C6C0EF20D61676F001787A8 /* MonkeyWorksCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCocoa.framework; path = /Library/Frameworks/MonkeyWorksCocoa.framework; sourceTree = "<absolute>"; };
+		5C7A9B200D63E72100C3EE80 /* RatBehaviorControlPanel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RatBehaviorControlPanel.xml; sourceTree = "<group>"; };
+		5CAE9AF60DD358E5006C4E49 /* StaircaseStateValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaircaseStateValueTransformer.h; sourceTree = "<group>"; };
+		5CAE9AF70DD358E5006C4E49 /* StaircaseStateValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaircaseStateValueTransformer.m; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* RatBehaviorControlPanel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatBehaviorControlPanel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				5C6C0EF30D61676F001787A8 /* MonkeyWorksCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* MonkeyWorksDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = MonkeyWorksDebugger;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C6C0EC50D615F6D001787A8 /* Icons */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				5C7A9B200D63E72100C3EE80 /* RatBehaviorControlPanel.xml */,
+				5C6C0EC20D615B51001787A8 /* Main.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5CAE9AE30DD358A4006C4E49 /* Value Transformers */,
+				5C6C0EDF0D616513001787A8 /* RatBehaviorControlPanelController.h */,
+				5C6C0EE00D616513001787A8 /* RatBehaviorControlPanelController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C6C0EF20D61676F001787A8 /* MonkeyWorksCocoa.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* RatBehaviorControlPanel.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* RatBehaviorControlPanel_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		5C6C0EC50D615F6D001787A8 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5C6C0EC90D615F80001787A8 /* TB_Step.tiff */,
+				5C6C0ECA0D615F80001787A8 /* TB_Run.tiff */,
+				5C6C0ECB0D615F80001787A8 /* TB_Pause.tiff */,
+				5C6C0ECC0D615F80001787A8 /* TB_Stop.tiff */,
+				5C6C0ECD0D615F80001787A8 /* TB_StepOver.tiff */,
+				5C6C0ECE0D615F80001787A8 /* TB_Continue.tiff */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		5CAE9AE30DD358A4006C4E49 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				5CAE9AF60DD358E5006C4E49 /* StaircaseStateValueTransformer.h */,
+				5CAE9AF70DD358E5006C4E49 /* StaircaseStateValueTransformer.m */,
+			);
+			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* RatBehaviorControlPanel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "RatBehaviorControlPanel" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				5C6C0EFC0D616D2C001787A8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RatBehaviorControlPanel;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = MonkeyWorksDebugger;
+			productReference = 8D5B49B6048680CD000E48DA /* RatBehaviorControlPanel.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "RatBehaviorControlPanel" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* MonkeyWorksDebugger */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* RatBehaviorControlPanel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				5C6C0EC30D615B51001787A8 /* Main.xib in Resources */,
+				5C6C0ECF0D615F80001787A8 /* TB_Step.tiff in Resources */,
+				5C6C0ED00D615F80001787A8 /* TB_Run.tiff in Resources */,
+				5C6C0ED10D615F80001787A8 /* TB_Pause.tiff in Resources */,
+				5C6C0ED20D615F80001787A8 /* TB_Stop.tiff in Resources */,
+				5C6C0ED30D615F80001787A8 /* TB_StepOver.tiff in Resources */,
+				5C6C0ED40D615F80001787A8 /* TB_Continue.tiff in Resources */,
+				5C7A9B210D63E72100C3EE80 /* RatBehaviorControlPanel.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C6C0EFC0D616D2C001787A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# make the directory if it isnt there\nmkdir -p \"/Library/Application Support/NewClient/Plugins/\"\n# copy the framework to the proper directory\nrm -dfR \"/Library/Application Support/MonkeyWorksClient/Plugins/MenuPlugins/RatBehaviorControlPanel.bundle\"\necho $BUILT_PRODUCTS_DIR\ncp -Rf \"$BUILT_PRODUCTS_DIR/RatBehaviorControlPanel.bundle\" \"/Library/Application Support/NewClient/Plugins/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6C0EE10D616513001787A8 /* RatBehaviorControlPanelController.m in Sources */,
+				5CAE9AF80DD358E5006C4E49 /* StaircaseStateValueTransformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = /Library/MonkeyWorks/include;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Library/Application\\ Support/NewClient/Plugins/";
+				PRODUCT_NAME = RatBehaviorControlPanel;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "RatBehaviorControlPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "RatBehaviorControlPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

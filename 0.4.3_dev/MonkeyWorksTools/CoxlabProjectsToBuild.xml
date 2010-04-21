@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<ProjectsToBuild>
+  <project>
+    <proj_name>New Client</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Release</cmd>
+    <dir>NewClient</dir>
+  </project>
+  <project>
+    <proj_name>New Client</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+    <dir>NewClient</dir>
+  </project>
+  <project>
+    <proj_name>New Client</proj_name>
+    <type>build</type>
+    <cmd>xcodebuild -nodistribute -target New\ Client build -configuration Debug</cmd>
+    <dir>NewClient</dir>
+  </project>
+
+  <project>
+    <proj_name>New Editor</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+    <dir>NewEditor</dir>
+  </project>
+  <project>
+    <proj_name>New Editor</proj_name>
+    <type>build</type>
+    <cmd>xcodebuild -nodistribute -target NewEditor build -configuration Debug</cmd>
+    <dir>NewEditor</dir>
+  </project>
+
+
+  <project>
+    <proj_name>New Variables Window</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+    <dir>ClientPlugins/MonkeyWorksVariablesWindow</dir>
+  </project>
+  <project>
+    <proj_name>New Variables Window</proj_name>
+    <type>build</type>
+    <cmd>xcodebuild -nodistribute -target MonkeyWorksVariablesWindow build -configuration Debug</cmd>
+    <dir>ClientPlugins/MonkeyWorksVariablesWindow</dir>
+  </project>
+
+  <project>
+    <proj_name>New Behavioral Window</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+    <dir>ClientPlugins/MonkeyWorksBehavioralWindowNew</dir>
+  </project>
+  <project>
+    <proj_name>New Behavioral Window</proj_name>
+    <type>build</type>
+    <cmd>xcodebuild -nodistribute -target MonkeyWorksBehavioralWindow build -configuration Debug</cmd>
+    <dir>ClientPlugins/MonkeyWorksBehavioralWindowNew</dir>
+  </project>
+
+
+
+  <project>
+    <proj_name>Rat Control Window</proj_name>
+    <type>clean</type>
+    <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+    <dir>ClientPlugins/RatBehaviorControlPanelNew</dir>
+  </project>
+  <project>
+    <proj_name>Rat Control Window</proj_name>
+    <type>build</type>
+    <cmd>xcodebuild -nodistribute -target RatBehaviorControlPanel build -configuration Debug</cmd>
+    <dir>ClientPlugins/RatBehaviorControlPanelNew</dir>
+  </project>
+</ProjectsToBuild>
+

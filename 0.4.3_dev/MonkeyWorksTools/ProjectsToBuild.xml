@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<ProjectsToBuild>
+  <project>
+     <proj_name>MonkeyWorksMacRequirements</proj_name>
+     <type>clean</type>
+     <cmd>make clean</cmd>
+     <dir>MonkeyWorksMacRequirements</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksMacRequirements</proj_name>
+     <type>build</type>
+     <cmd>make</cmd>
+     <dir>MonkeyWorksMacRequirements</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksExperimentXML</proj_name>
+     <type>install</type>
+     <cmd>xcodebuild -nodistribute -target InstallTests -configuration Release build</cmd>
+     <dir>MonkeyWorksExperimentXML</dir>
+  </project>
+  <project>
+     <proj_name>Scarab</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Development</cmd>
+     <dir>Scarab</dir>
+  </project>
+  <project>
+     <proj_name>libscarab.a</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target libscarab.a build -configuration Development</cmd>
+     <dir>Scarab</dir>
+  </project>
+
+  <project>
+     <proj_name>MonkeyWorksCore</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Development</cmd>
+     <dir>MonkeyWorksCore</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksCore.framework</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target Everything build -configuration Development</cmd>
+     <dir>MonkeyWorksCore</dir>
+  </project>
+
+  <project>
+     <proj_name>MovieStimulus</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>DLabPlugins/MoviePlugin</dir>
+  </project>
+  <project>
+     <proj_name>UninstallMovieStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target UninstallMovieStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/MoviePlugin</dir>
+  </project>
+  <project>
+     <proj_name>MovieStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target MovieStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/MoviePlugin</dir>
+  </project>
+
+  <project>
+     <proj_name>RectangleStimulus</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Release</cmd>
+     <dir>DLabPlugins/RectangleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>RectangleStimulus</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>DLabPlugins/RectangleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>UninstallRectangleStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target UninstallRectangleStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/RectangleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>RectangleStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target RectangleStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/RectangleStimulus</dir>
+  </project>
+
+  <project>
+     <proj_name>CircleStimulus</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Release</cmd>
+     <dir>DLabPlugins/CircleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>CircleStimulus</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>DLabPlugins/CircleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>UninstallCircleStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target UninstallCircleStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/CircleStimulus</dir>
+  </project>
+  <project>
+     <proj_name>CircleStimulus.plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target CircleStimulusPlugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/CircleStimulus</dir>
+  </project>
+
+  <project>
+     <proj_name>ITC18Plugin</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>DLabPlugins/ITC18Plugin</dir>
+  </project>
+  <project>
+     <proj_name>UninstallITC18Plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target UninstallITC18Plugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/ITC18Plugin</dir>
+  </project>
+  <project>
+     <proj_name>ITC18Plugin</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target ITC18Plugin build -configuration Debug</cmd>
+     <dir>DLabPlugins/ITC18Plugin</dir>
+  </project>
+
+
+  <project>
+     <proj_name>MonkeyWorksCocoa</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>MonkeyWorksCocoa</dir>
+  </project>
+  <project>
+     <proj_name>Uninstall MonkeyWorksCocoa.framework</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute build -target UninstallMWCocoa -configuration Debug</cmd>
+     <dir>MonkeyWorksCocoa</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksCocoa.framework</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -target MonkeyWorksCocoa -nodistribute build -configuration Debug</cmd>
+     <dir>MonkeyWorksCocoa</dir>
+  </project>
+
+  <project>
+     <proj_name>MonkeyWorksServer</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean  -configuration Debug</cmd>
+     <dir>MonkeyWorksServer</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksServer.app</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target MonkeyWorksServer -configuration Debug build</cmd>
+     <dir>MonkeyWorksServer</dir>
+  </project>
+  <project>
+     <proj_name>EyeWindow</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean  -configuration Debug</cmd>
+     <dir>DLabClientPlugins/EyeWindow</dir>
+  </project>
+  <project>
+     <proj_name>EyeWindow</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target MonkeyWorksEyeWindow -configuration Debug build</cmd>
+     <dir>DLabClientPlugns/EyeWindow</dir>
+  </project>
+  <project>
+     <proj_name>RewardWindow</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean  -configuration Debug</cmd>
+     <dir>DLabClientPlugins/RewardWindow</dir>
+  </project>
+  <project>
+     <proj_name>RewardWindow</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target MonkeyWorksRewardWindow -configuration Debug build</cmd>
+     <dir>DLabClientPlugins/RewardWindow</dir>
+  </project>
+  <project>
+     <proj_name>CalibratorWindow</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean  -configuration Debug</cmd>
+     <dir>DLabClientPlugins/CalibratorWindow</dir>
+  </project>
+  <project>
+     <proj_name>CalibratorWindow</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target CalibratorWindow -configuration Debug build</cmd>
+     <dir>DLabClientPlugins/CalibratorWindow</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksMATLABWindow</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean  -configuration Debug</cmd>
+     <dir>DLabClientPlugins/MATLABWindow</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksMATLABWindow.bundle</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target MonkeyWorksMATLABWindow -configuration Debug build</cmd>
+     <dir>DLabClientPlugins/MATLABWindow</dir>
+  </project>
+
+
+  <project>
+     <proj_name>DataFileIndexer</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>MonkeyWorksTools/DataFileIndexer</dir>
+  </project>
+  <project>
+     <proj_name>libdfindex.a</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target dfindex -configuration Debug build</cmd>
+     <dir>MonkeyWorksTools/DataFileIndexer</dir>
+  </project>
+  <project>
+     <proj_name>MonkeyWorksStreamUtilities</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>MonkeyWorksTools/MonkeyWorksStreamUtilities</dir>
+  </project>
+  <project>
+     <proj_name>libMonkeyWorksStreamUtilities.a</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target libMonkeyWorksStreamUtilities -configuration Debug build</cmd>
+     <dir>MonkeyWorksTools/MonkeyWorksStreamUtilities</dir>
+  </project>
+  <project>
+     <proj_name>DataFileReader</proj_name>
+     <type>clean</type>
+     <cmd>xcodebuild -alltargets clean -configuration Debug</cmd>
+     <dir>MonkeyWorksTools/DataFileReader</dir>
+  </project>
+  <project>
+     <proj_name>mwdfr</proj_name>
+     <type>build</type>
+     <cmd>xcodebuild -nodistribute -target mwdfr -configuration Debug build</cmd>
+     <dir>MonkeyWorksTools/DataFileReader</dir>
+  </project>
+  <project>
+     <proj_name>MatlabDataReader</proj_name>
+     <type>clean</type>
+     <cmd>make clean</cmd>
+     <dir>MonkeyWorksTools/MatlabDataReader</dir>
+  </project>
+  <project>
+     <proj_name>MatlabDataReader</proj_name>
+     <type>build</type>
+     <cmd>make all</cmd>
+     <dir>MonkeyWorksTools/MatlabDataReader</dir>
+  </project>
+</ProjectsToBuild>
+

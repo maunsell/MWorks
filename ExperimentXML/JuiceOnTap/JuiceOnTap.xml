@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<monkeyml version="1.0">
+    <io_devices _id="id38909230" tag="IO Devices">
+        <iodevice _id="id38909235" tag="FM" priority="" type="fake_monkey" id="" _error="You must specify at least one channel on each IO device"></iodevice>
+        <iodevice _id="id38909249" tag="ITC" priority="" alt="FM" type="ITC18" id="" _error="You must specify at least one channel on each IO device">
+            <iochannel _id="id38909266" device="ITC18" variable="TTLchannel0" capability="ITC18_TTL_INPUT0" data_type="digital" direction="input" synchrony="hardware_timed_synchronous" range_min="0" range_max="5" resolution="1" update_interval="5ms" data_interval="0.5ms" tag="ioTTLchannel0" TTL_trigger_port="0" pre_trigger_interval="5ms" post_trigger_interval="5ms"></iochannel>
+            <iochannel _id="id38909302" variable="juice" capability="ITC18_TTL_ASYCH_OUT00" data_type="pulse_active_high" direction="output" synchrony="asynchronous" range_min="0" range_max="5" resolution="1" update_interval="3ms" data_interval="1ms" TTL_trigger_port="0" pre_trigger_interval="5ms" post_trigger_interval="5ms" tag="juiceChannel"></iochannel>
+        </iodevice>
+    </io_devices>
+    <variables _id="id38909335" tag="Variables">
+        <variable _id="id38909341" tag="num_rewards" scope="global" logging="when_changed" default_value="0" type="integer" persistant="1"></variable>
+        <variable _id="id38909357" tag="success" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
+        <variable _id="id38909371" tag="failure" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
+        <variable _id="id38909385" tag="TTLchannel0" full_name="TTLchannel0" default_value="0" scope="GLOBAL" type="INTEGER" editable="never" logging="when_changed"></variable>
+        <variable _id="id38909403" tag="rewardDuration_us" scope="global" logging="when_changed" default_value="20000" type="integer"></variable>
+        <variable _id="id38909417" tag="trialTime_s" scope="global" logging="when_changed" default_value="30" type="integer"></variable>
+        <variable _id="id38909431" tag="readTime_ms" scope="global" logging="when_changed" default_value="250" type="integer"></variable>
+        <variable _id="id38909445" tag="juice" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
+    </variables>
+    <sounds _id="id38909459" tag="Sounds">
+        <sound _id="id38909465" tag="trialStartSound" type="wav_file" path="/Users/histed/Experiments/JuiceOnTap/wavs/5C.wav"></sound>
+        <sound _id="id38909475" tag="correctSound" type="wav_file" path="/Users/histed/Experiments/JuiceOnTap/wavs/7C.wav"></sound>
+        <sound _id="id38909485" tag="incorrectSound" type="wav_file" path="/Users/histed/Experiments/JuiceOnTap/wavs/300msSq.wav"></sound>
+        <sound _id="id38909495" tag="rewardSound" type="wav_file" path="/Users/histed/Experiments/JuiceOnTap/wavs/shortCorrect.wav"></sound>
+    </sounds>
+    <stimuli _id="id38909505" tag="Stimuli"></stimuli>
+    <experiment _id="id38909511" tag="Experiment" full_name="DigitalInExample">
+        <protocol _id="id38909519" tag="Protocol" full_name="Protocol" interruptable="YES" selection="sequential_ascending" nsamples="1" sampling_method="cycles" description="" interruptible="YES">
+            <block _id="id38909539" tag="Block" full_name="Block" interruptable="YES" selection="sequential_ascending" nsamples="10" sampling_method="cycles" description="" interruptible="YES">
+                <trial _id="id38909560" tag="Trial" full_name="Trial" description="" interruptible="YES" selection="sequential_ascending" nsamples="5" sampling_method="cycles">
+                    <task_system _id="id38909578" tag="TS" full_name="TS" interruptable="YES" description="" interruptible="YES">
+                        <task_system_state _id="id38909592" tag="openITC" full_name="openITC" interruptable="YES" description="" interruptible="YES">
+                            <action _id="id38909606" type="assignment" tag="initialize juice" variable="juice" value="0"></action>
+                            <action tag="startIO" full_name="startIO" type="start_device_IO" device="ITC"></action>
+                            <action _id="id38909628" tag="StartTrialTimer" full_name="StartTrialTimer" type="start_timer" timer="trialTimer" duration="trialTime_s" duration_units="s"></action>
+                            <transition _id="id38909654" tag="goToReadDigitalIn" full_name="goToReadDigitalIn" target="ReadDigitalIn" type="direct"></transition>
+                        </task_system_state>
+                        <task_system_state _id="id38909666" tag="ReadDigitalIn" full_name="ReadDigitalIn" description="" interruptible="YES">
+                            <action _id="id38909678" tag="Blank" full_name="ReportReadDigitalIn" type="report" message="[ ]"></action>
+                            <action _id="id38909690" tag="ReportReadDigitalIn" full_name="ReportReadDigitalIn" type="report" message="ReadDigitalIn"></action>
+                            <action _id="id38909702" tag="ReportDigital 1" full_name="ReportDigital 1" type="report" message="TTLchannel0 = $TTLchannel0"></action>
+                            <action _id="id38909714" tag="Report Juice 1" full_name="Report juice 1" type="report" message="juice = $juice"></action>
+                            <transition _id="id38909726" type="conditional" tag="If Condition is True, Transition to ..." condition="TTLchannel0 == 1" target="PlaySound"></transition>
+                            <transition _id="id38909738" type="timer_expired" tag="If Timer Expired, Transition to ... 3" target="CloseITC" timer="trialTimer"></transition>
+                        </task_system_state>
+                        <task_system_state _id="id38909750" tag="PlaySound" interruptible="YES">
+                            <action_marker _id="id38909758" _unmoveable="1" tag="Actions"></action_marker>
+                            <action _id="id38909766" tag="ReportPlaySound" full_name="ReportPlaySound" type="report" message="PlaySound"></action>
+                            <action _id="id38909778" tag="ReportDigital 2" full_name="ReportDigital 1" type="report" message="TTLchannel0 = $TTLchannel0"></action>
+                            <action _id="id38909790" tag="ReportJuice 2" full_name="Report juice 2" type="report" message="juice = $juice"></action>
+                            <action _id="id38909802" tag="Play reward sound" type="play_sound" sound="rewardSound"></action>
+                            <action _id="id38909811" type="assignment" tag="num_rewards++" variable="num_rewards" value="num_rewards+1"></action>
+                            <action _id="id38909823" type="assignment" tag="Start reward" variable="juice" value="rewardDuration_us"></action>
+                            <transition_marker _id="id38909835" _unmoveable="1" tag="Transitions"></transition_marker>
+                            <transition _id="id38909843" type="direct" tag="GoToContinue" target="Continue"></transition>
+                        </task_system_state>
+                        <task_system_state _id="id38909853" tag="Continue" full_name="Continue" description="" interruptible="YES">
+                            <action _id="id38909865" tag="ReportContinue" full_name="ReportDigital" type="report" message="Continue."></action>
+                            <action _id="id38909877" tag="ReportDigital 3" full_name="ReportDigital 3" type="report" message="TTLchannel0 = $TTLchannel0"></action>
+                            <action _id="id38909889" tag="ReportJuice 3" full_name="ReportJuice 3" type="report" message="juice = $juice"></action>
+                            <action _id="id38909900" type="start_timer" tag="Start Timer" timer="readTimer" timebase="" duration="readTime_ms" duration_units="ms"></action>
+                            <transition _id="id38909917" tag="goToReadDigitalInTE" full_name="goToReadDigitalInTE" target="LeverUp" type="timer_expired" timer="readTimer"></transition>
+                            <transition _id="id38909931" type="timer_expired" tag="If Timer Expired, Transition to ... 2" target="CloseITC" timer="trialTimer"></transition>
+                        </task_system_state>
+                        <task_system_state _id="id38909943" tag="LeverUp" interruptible="YES">
+                            <action_marker _id="id38909951" _unmoveable="1" tag="Actions"></action_marker>
+                            <action _id="id38909958" type="if" tag="Conditionally Execute Actions" condition="TTLchannel0 == 0">
+                                <action _id="id38909968" tag="ReportLeverUp" full_name="ReportDigital" type="report" message="LeverUp"></action>
+                                <action _id="id38909980" tag="ReportDigital 4" full_name="ReportDigital" type="report" message="TTLchannel0 = $TTLchannel0"></action>
+                                <action _id="id38909992" tag="ReportJuice 4" full_name="ReportDigital" type="report" message="juice= $juice"></action>
+                            </action>
+                            <transition_marker _id="id38910004" _unmoveable="1" tag="Transitions"></transition_marker>
+                            <transition _id="id38910012" type="conditional" tag="If Condition is True, Transition to ... 2" condition="TTLchannel0 == 0" target="ReadDigitalIn"></transition>
+                            <transition _id="id38910024" type="timer_expired" tag="If Timer Expired, Transition to ..." target="CloseITC" timer="trialTimer"></transition>
+                        </task_system_state>
+                        <task_system_state _id="id38910036" tag="CloseITC" full_name="CloseITC" interruptable="YES" description="" interruptible="YES">
+                            <action tag="stopIO" full_name="stopIO" type="stop_device_IO" device="ITC"></action>
+                            <transition _id="id38910060" type="yield" tag="end" full_name="end"></transition>
+                        </task_system_state>
+                    </task_system>
+                </trial>
+            </block>
+        </protocol>
+    </experiment>
+</monkeyml>

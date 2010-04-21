@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 81F393961100DA07007E62C0 /* Client (testing) */;
+		activeTarget = 8D5B49AC048680CD000E48DA /* MonkeyWorksMATLABWindow */;
+		addToTargets = (
+			8D5B49AC048680CD000E48DA /* MonkeyWorksMATLABWindow */,
+		);
+		codeSenseManager = 81F393841100D959007E62C0 /* Code sense */;
+		executables = (
+			81F393961100DA07007E62C0 /* Client (testing) */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					228.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					561,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					575,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					521,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 292960007;
+			PBXWorkspaceStateSaveDate = 292960007;
+		};
+		perUserProjectItems = {
+			81553FB3117648D300C5D390 /* PBXTextBookmark */ = 81553FB3117648D300C5D390 /* PBXTextBookmark */;
+			8197FA0D11762C6A00BE5111 /* PBXTextBookmark */ = 8197FA0D11762C6A00BE5111 /* PBXTextBookmark */;
+			8197FA4D117636C600BE5111 /* PBXTextBookmark */ = 8197FA4D117636C600BE5111 /* PBXTextBookmark */;
+			81BDD82B111B743400BD336C /* PBXTextBookmark */ = 81BDD82B111B743400BD336C /* PBXTextBookmark */;
+			81BDD82C111B743400BD336C /* PBXTextBookmark */ = 81BDD82C111B743400BD336C /* PBXTextBookmark */;
+			81BDD82E111B743400BD336C /* PBXTextBookmark */ = 81BDD82E111B743400BD336C /* PBXTextBookmark */;
+			81BDD830111B743400BD336C /* PBXTextBookmark */ = 81BDD830111B743400BD336C /* PBXTextBookmark */;
+			81BDD831111B743400BD336C /* PBXTextBookmark */ = 81BDD831111B743400BD336C /* PBXTextBookmark */;
+			81F393851100D98A007E62C0 /* PBXTextBookmark */ = 81F393851100D98A007E62C0 /* PBXTextBookmark */;
+			81F393871100D98A007E62C0 /* PBXTextBookmark */ = 81F393871100D98A007E62C0 /* PBXTextBookmark */;
+			81F393B6110E7FDE007E62C0 /* PBXTextBookmark */ = 81F393B6110E7FDE007E62C0 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 81F393831100D959007E62C0 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {739, 445}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 421}";
+		};
+	};
+	0E5505010AADB81800987B47 /* MWMATLABWindowController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 952}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 439}";
+		};
+	};
+	0E5505020AADB81800987B47 /* MWMATLABWindowController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {739, 7056}}";
+			sepNavSelRange = "{3370, 72}";
+			sepNavVisRange = "{2507, 1283}";
+		};
+	};
+	0E60D49C0BDD0CDD00B5386E /* MATLABInterface.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {779, 560}}";
+			sepNavSelRange = "{89, 19}";
+			sepNavVisRange = "{0, 325}";
+		};
+	};
+	0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 4788}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 517}";
+		};
+	};
+	81553FB3117648D300C5D390 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */;
+		name = "MonkeyWorksMATLABWindow.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 0;
+	};
+	8197FA0D11762C6A00BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5505020AADB81800987B47 /* MWMATLABWindowController.m */;
+		name = "MWMATLABWindowController.m: 109";
+		rLen = 72;
+		rLoc = 3370;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 2507;
+	};
+	8197FA4D117636C600BE5111 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */;
+		name = "MonkeyWorksMATLABWindow.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 0;
+	};
+	81BDD82B111B743400BD336C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */;
+		name = "MATLABInterface.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 0;
+	};
+	81BDD82C111B743400BD336C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5505010AADB81800987B47 /* MWMATLABWindowController.h */;
+		name = "MWMATLABWindowController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 439;
+		vrLoc = 0;
+	};
+	81BDD82E111B743400BD336C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5505020AADB81800987B47 /* MWMATLABWindowController.m */;
+		name = "MWMATLABWindowController.m: 94";
+		rLen = 72;
+		rLoc = 2786;
+		rType = 0;
+		vrLen = 892;
+		vrLoc = 2387;
+	};
+	81BDD830111B743400BD336C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E60D49D0BDD0CDD00B5386E /* MATLABInterface.m */;
+		name = "MATLABInterface.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 0;
+	};
+	81BDD831111B743400BD336C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5505010AADB81800987B47 /* MWMATLABWindowController.h */;
+		name = "MWMATLABWindowController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 439;
+		vrLoc = 0;
+	};
+	81F393831100D959007E62C0 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryName = "MWK Local";
+		};
+	};
+	81F393841100D959007E62C0 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	81F393851100D98A007E62C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E60D49C0BDD0CDD00B5386E /* MATLABInterface.h */;
+		name = "MATLABInterface.h: 5";
+		rLen = 19;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 347;
+		vrLoc = 0;
+	};
+	81F393871100D98A007E62C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E60D49C0BDD0CDD00B5386E /* MATLABInterface.h */;
+		name = "MATLABInterface.h: 5";
+		rLen = 19;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 347;
+		vrLoc = 0;
+	};
+	81F393961100DA07007E62C0 /* Client (testing) */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 81F393971100DA07007E62C0 /* MWClient.app */;
+		libgmallocEnabled = 0;
+		name = "Client (testing)";
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	81F393971100DA07007E62C0 /* MWClient.app */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
+		name = MWClient.app;
+		path = /Applications/MWClient.app;
+		sourceTree = "<absolute>";
+	};
+	81F393B6110E7FDE007E62C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0E5504FF0AADB7FE00987B47 /* MonkeyWorksMATLABWindow.xml */;
+		name = "MonkeyWorksMATLABWindow.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 0;
+	};
+	8D5B49AC048680CD000E48DA /* MonkeyWorksMATLABWindow */ = {
+		activeExec = 0;
+	};
+}

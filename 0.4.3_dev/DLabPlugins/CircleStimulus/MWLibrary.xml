@@ -1,0 +1,24 @@
+<MWElements>
+  <MWElement name="Ellipse Stimulus">
+    <!-- XPath 2.0 expression defining nodes of this type -->
+    <match_signature>stimulus[@type="circle"]</match_signature>
+    
+    <isa>Stimulus</isa>
+    
+    <description>
+      A ellipse stimulus
+    </description>
+    
+    <!-- Payload -->
+    <code>
+      <stimulus type="circle" tag="New Ellipse"
+                color="1,1,1"
+		x_size=""
+		y_size=""
+		x_position=""
+		y_position=""
+		rotation=""
+		contrast=""/>
+    </code>
+  </MWElement>
+</MWElements>

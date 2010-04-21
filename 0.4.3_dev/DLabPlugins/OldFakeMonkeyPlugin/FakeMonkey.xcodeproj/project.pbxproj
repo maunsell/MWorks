@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0E121C700E6B1EB6007B29B8 /* UninstallFakeMonkeyPlugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0E121C770E6B1ED3007B29B8 /* Build configuration list for PBXAggregateTarget "UninstallFakeMonkeyPlugin" */;
+			buildPhases = (
+				0E121C6F0E6B1EB6007B29B8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UninstallFakeMonkeyPlugin;
+			productName = UninstallHIDPlugin;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0E37FBA30E59C3DD008B885D /* FakeMonkeyPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E37FBA10E59C3DD008B885D /* FakeMonkeyPlugin.cpp */; };
+		0E52AED30E93B9780013DFCC /* FakeMonkey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E52AECF0E93B9780013DFCC /* FakeMonkey.cpp */; };
+		0E52AF5B0E93BE8B0013DFCC /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E52AF5A0E93BE8B0013DFCC /* IOKit.framework */; };
+		0E52AF5F0E93BEB20013DFCC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C167FFE841241C02AAC07 /* AppKit.framework */; };
+		0E52AF640E93BEDB0013DFCC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E52AF630E93BEDB0013DFCC /* Carbon.framework */; };
+		0ECF986A0E9C732600DF3096 /* FakeMonkeySaccadeToLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF98690E9C732600DF3096 /* FakeMonkeySaccadeToLocation.cpp */; };
+		0ECF987B0E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF987A0E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.cpp */; };
+		0ECF98E40E9C7D5E00DF3096 /* FakeMonkeyFixate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF98E30E9C7D5E00DF3096 /* FakeMonkeyFixate.cpp */; };
+		0ECF99000E9C7EB200DF3096 /* FakeMonkeyFixateFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF98FF0E9C7EB200DF3096 /* FakeMonkeyFixateFactory.cpp */; };
+		5C4B0A650DC79212001BC518 /* MonkeyWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */; };
+		687C7C140E9D425100C76F25 /* FakeMonkeyJuiceNotification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 687C7C130E9D425100C76F25 /* FakeMonkeyJuiceNotification.cpp */; };
+		688D4D1C0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 688D4D1B0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.cpp */; };
+		688D4D1F0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 688D4D1E0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.cpp */; };
+		689708DC0E5A03BB00CE38EA /* FakeMonkeyFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 689708DB0E5A03BB00CE38EA /* FakeMonkeyFactory.cpp */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0E37FBA10E59C3DD008B885D /* FakeMonkeyPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeyPlugin.cpp; sourceTree = "<group>"; };
+		0E37FBA20E59C3DD008B885D /* FakeMonkeyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyPlugin.h; sourceTree = "<group>"; };
+		0E52AECF0E93B9780013DFCC /* FakeMonkey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkey.cpp; sourceTree = "<group>"; };
+		0E52AED00E93B9780013DFCC /* FakeMonkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkey.h; sourceTree = "<group>"; };
+		0E52AF5A0E93BE8B0013DFCC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		0E52AF630E93BEDB0013DFCC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		0ECF98680E9C732600DF3096 /* FakeMonkeySaccadeToLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeySaccadeToLocation.h; sourceTree = "<group>"; };
+		0ECF98690E9C732600DF3096 /* FakeMonkeySaccadeToLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeySaccadeToLocation.cpp; sourceTree = "<group>"; };
+		0ECF98790E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeySaccadeToLocationFactory.h; sourceTree = "<group>"; };
+		0ECF987A0E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeySaccadeToLocationFactory.cpp; sourceTree = "<group>"; };
+		0ECF98E20E9C7D5E00DF3096 /* FakeMonkeyFixate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyFixate.h; sourceTree = "<group>"; };
+		0ECF98E30E9C7D5E00DF3096 /* FakeMonkeyFixate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeyFixate.cpp; sourceTree = "<group>"; };
+		0ECF98FE0E9C7EB200DF3096 /* FakeMonkeyFixateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyFixateFactory.h; sourceTree = "<group>"; };
+		0ECF98FF0E9C7EB200DF3096 /* FakeMonkeyFixateFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeyFixateFactory.cpp; sourceTree = "<group>"; };
+		32DBCF630370AF2F00C91783 /* FakeMonkeyPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyPlugin_Prefix.pch; sourceTree = "<group>"; };
+		5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCore.framework; path = /Library/Frameworks/MonkeyWorksCore.framework; sourceTree = "<absolute>"; };
+		687C7C120E9D425100C76F25 /* FakeMonkeyJuiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyJuiceNotification.h; sourceTree = "<group>"; };
+		687C7C130E9D425100C76F25 /* FakeMonkeyJuiceNotification.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeyJuiceNotification.cpp; sourceTree = "<group>"; };
+		688D4D1A0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeySaccadeAndFixate.h; sourceTree = "<group>"; };
+		688D4D1B0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeySaccadeAndFixate.cpp; sourceTree = "<group>"; };
+		688D4D1D0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeySaccadeAndFixateFactory.h; sourceTree = "<group>"; };
+		688D4D1E0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeySaccadeAndFixateFactory.cpp; sourceTree = "<group>"; };
+		689708DA0E5A03BB00CE38EA /* FakeMonkeyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMonkeyFactory.h; sourceTree = "<group>"; };
+		689708DB0E5A03BB00CE38EA /* FakeMonkeyFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeMonkeyFactory.cpp; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* FakeMonkeyPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeMonkeyPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4B0A650DC79212001BC518 /* MonkeyWorksCore.framework in Frameworks */,
+				0E52AF5B0E93BE8B0013DFCC /* IOKit.framework in Frameworks */,
+				0E52AF5F0E93BEB20013DFCC /* AppKit.framework in Frameworks */,
+				0E52AF640E93BEDB0013DFCC /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* HIDPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = HIDPlugin;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0E52AF630E93BEDB0013DFCC /* Carbon.framework */,
+				0E52AF5A0E93BE8B0013DFCC /* IOKit.framework */,
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF98660E9C730600DF3096 /* Actions */,
+				0E52AFCA0E93C42A0013DFCC /* Device */,
+				0E37FBA10E59C3DD008B885D /* FakeMonkeyPlugin.cpp */,
+				0E37FBA20E59C3DD008B885D /* FakeMonkeyPlugin.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0E52AFCA0E93C42A0013DFCC /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				0E52AECF0E93B9780013DFCC /* FakeMonkey.cpp */,
+				0E52AED00E93B9780013DFCC /* FakeMonkey.h */,
+				689708DA0E5A03BB00CE38EA /* FakeMonkeyFactory.h */,
+				689708DB0E5A03BB00CE38EA /* FakeMonkeyFactory.cpp */,
+				687C7C120E9D425100C76F25 /* FakeMonkeyJuiceNotification.h */,
+				687C7C130E9D425100C76F25 /* FakeMonkeyJuiceNotification.cpp */,
+			);
+			name = Device;
+			sourceTree = "<group>";
+		};
+		0ECF98660E9C730600DF3096 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF98680E9C732600DF3096 /* FakeMonkeySaccadeToLocation.h */,
+				0ECF98690E9C732600DF3096 /* FakeMonkeySaccadeToLocation.cpp */,
+				0ECF98790E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.h */,
+				0ECF987A0E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.cpp */,
+				0ECF98E20E9C7D5E00DF3096 /* FakeMonkeyFixate.h */,
+				0ECF98E30E9C7D5E00DF3096 /* FakeMonkeyFixate.cpp */,
+				0ECF98FE0E9C7EB200DF3096 /* FakeMonkeyFixateFactory.h */,
+				0ECF98FF0E9C7EB200DF3096 /* FakeMonkeyFixateFactory.cpp */,
+				688D4D1A0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.h */,
+				688D4D1B0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.cpp */,
+				688D4D1D0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.h */,
+				688D4D1E0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.cpp */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* FakeMonkeyPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* FakeMonkeyPlugin_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* FakeMonkeyPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "FakeMonkeyPlugin" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				5C4B0B5D0DC7CAB9001BC518 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeMonkeyPlugin;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = HIDPlugin;
+			productReference = 8D5B49B6048680CD000E48DA /* FakeMonkeyPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "FakeMonkey" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* HIDPlugin */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* FakeMonkeyPlugin */,
+				0E121C700E6B1EB6007B29B8 /* UninstallFakeMonkeyPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E121C6F0E6B1EB6007B29B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\nrm -rf \"/Library/MonkeyWorks/Plugins/HIDPlugin.bundle\"\n\nexit 0";
+		};
+		5C4B0B5D0DC7CAB9001BC518 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -Rf $INSTALL_PATH/FakeMonkeyPlugin.bundle\ncp -R \"$BUILT_PRODUCTS_DIR/FakeMonkeyPlugin.bundle\" $INSTALL_PATH";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E52AED30E93B9780013DFCC /* FakeMonkey.cpp in Sources */,
+				0E37FBA30E59C3DD008B885D /* FakeMonkeyPlugin.cpp in Sources */,
+				689708DC0E5A03BB00CE38EA /* FakeMonkeyFactory.cpp in Sources */,
+				0ECF986A0E9C732600DF3096 /* FakeMonkeySaccadeToLocation.cpp in Sources */,
+				0ECF987B0E9C73DF00DF3096 /* FakeMonkeySaccadeToLocationFactory.cpp in Sources */,
+				0ECF98E40E9C7D5E00DF3096 /* FakeMonkeyFixate.cpp in Sources */,
+				0ECF99000E9C7EB200DF3096 /* FakeMonkeyFixateFactory.cpp in Sources */,
+				688D4D1C0E9D0A2200EC8832 /* FakeMonkeySaccadeAndFixate.cpp in Sources */,
+				688D4D1F0E9D0A3300EC8832 /* FakeMonkeySaccadeAndFixateFactory.cpp in Sources */,
+				687C7C140E9D425100C76F25 /* FakeMonkeyJuiceNotification.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E121C710E6B1EB6007B29B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = HIDPlugin.bundle;
+			};
+			name = Debug;
+		};
+		0E121C720E6B1EB6007B29B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = HIDPlugin.bundle;
+			};
+			name = Release;
+		};
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FakeMonkeyPlugin_Prefix.pch;
+				HEADER_SEARCH_PATHS = /Library/MonkeyWorks/include;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/MonkeyWorks/Plugins;
+				LIBRARY_SEARCH_PATHS = /Library/MonkeyWorks/lib;
+				PRODUCT_NAME = FakeMonkeyPlugin;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HIDPlugin_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					/Library/MonkeyWorks/include,
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = /Library/MonkeyWorks/lib;
+				OTHER_LDFLAGS = "-lboost";
+				PRODUCT_NAME = HIDPlugin;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E121C770E6B1ED3007B29B8 /* Build configuration list for PBXAggregateTarget "UninstallFakeMonkeyPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E121C710E6B1EB6007B29B8 /* Debug */,
+				0E121C720E6B1EB6007B29B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "FakeMonkeyPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "FakeMonkey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

@@ -1,0 +1,18 @@
+<MWElements>
+  <MWElement name="Jim1">
+    <!-- XPath 2.0 expression defining nodes of this type -->
+    <match_signature>dlab_template[@type="dlab_template_type"]</match_signature>
+    
+    <isa></isa>
+    <allowed_parent></allowed_parent>
+	
+    <description>
+      A sample shell for a plugin
+    </description>
+    
+    <!-- Payload -->
+    <code>
+      <dlab_template type="dlab_template_type" tag="plugin template"/>
+    </code>
+  </MWElement>
+</MWElements>

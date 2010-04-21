@@ -1,0 +1,53 @@
+#!/bin/bash
+
+CURRENT_TEST_BLOCK=0
+TEST_NUMBER_IN_BLOCK=100
+
+for XML_FILE in `find /Library/MonkeyWorks/tests/XML -name "*.xml"`
+do
+    
+    XML_FILE2=${XML_FILE/%\TESTDATA.xml/}    
+
+    if [ "$XML_FILE" == "$XML_FILE2" ] 
+    then
+	if [ $TEST_NUMBER_IN_BLOCK -eq 100 ]
+	then
+	    TEST_NUMBER_IN_BLOCK=0
+	    CURRENT_TEST_BLOCK=$((CURRENT_TEST_BLOCK+1))
+	fi
+
+	TEST_DATA_FILE=`echo $XML_FILE | sed 's/\(.*\/\)\(.*\)\.xml/\1\2\.TESTDATA\.xml/'`
+	
+	if [ ! -f $TEST_DATA_FILE ]
+	then
+	    TEST_DATA_FILE="/Library/MonkeyWorks/tests/MarionetteTest.app/Contents/Resources/default_test_data.xml"
+	fi
+	
+	CURRENT_FACTORY_NAME="marionette_tests_${CURRENT_TEST_BLOCK}_factory"
+	NUM_SHELL_COMMAND_SPACES=$((`echo "${CURRENT_FACTORY_NAME}.addStep(shell.ShellCommand(" | wc -c`-1)) 
+	NUM_COMMAND_SPACES=$((`echo "command=[" | wc -c`+NUM_SHELL_COMMAND_SPACES-1))
+
+	SHELL_COMMAND_SPACES=""
+	while [ $NUM_SHELL_COMMAND_SPACES -gt 0 ]
+	do
+	    SHELL_COMMAND_SPACES="${SHELL_COMMAND_SPACES} "
+	    NUM_SHELL_COMMAND_SPACES=$((NUM_SHELL_COMMAND_SPACES-1))
+	done
+
+	COMMAND_SPACES=""
+	while [ $NUM_COMMAND_SPACES -gt 0 ]
+	do
+	    COMMAND_SPACES="${COMMAND_SPACES} "
+	    NUM_COMMAND_SPACES=$((NUM_COMMAND_SPACES-1))
+	done
+
+	TRUNCATED_XML=`echo $XML_FILE | sed 's/\/Library\/MonkeyWorks\/tests\/XML\/\(.*\)\.xml/\1/'`
+	echo "${CURRENT_FACTORY_NAME}.addStep(shell.ShellCommand(command=[\"/Library/MonkeyWorks/tests/MarionetteTest.app/Contents/MacOS/MarionetteTest\","
+	echo "${COMMAND_SPACES}\"${XML_FILE}\","
+	echo "${COMMAND_SPACES}\"${TEST_DATA_FILE}\"],"
+	echo "${SHELL_COMMAND_SPACES}descriptionDone=[\"${TRUNCATED_XML}\", \"completed\"],"
+	echo "${SHELL_COMMAND_SPACES}description=[\"${TRUNCATED_XML}\", \"running\"]))"
+
+	TEST_NUMBER_IN_BLOCK=$((TEST_NUMBER_IN_BLOCK+1))
+    fi
+done
