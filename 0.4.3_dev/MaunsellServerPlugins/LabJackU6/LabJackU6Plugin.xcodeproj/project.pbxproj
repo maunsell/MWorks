@@ -22,10 +22,11 @@
 
 /* Begin PBXBuildFile section */
 		5C4B0A650DC79212001BC518 /* MonkeyWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */; };
+		81BCE9CA1180B39E00C0AC5B /* LabJackU6Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */; };
+		81BCE9CE1180B3A600C0AC5B /* LabJackU6Device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9CB1180B3A600C0AC5B /* LabJackU6Device.cpp */; };
+		81BCE9DB1180B6BF00C0AC5B /* u6.c in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9DA1180B6BF00C0AC5B /* u6.c */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		FC2E0A0210D5C1840040B055 /* MWLibrary.xml in Resources */ = {isa = PBXBuildFile; fileRef = FC2E0A0110D5C1840040B055 /* MWLibrary.xml */; };
-		FCE4B7ED10F126AE000BDC69 /* nidaqmxbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE4B7EC10F126AE000BDC69 /* nidaqmxbase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,16 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCore.framework; path = /Library/Frameworks/MonkeyWorksCore.framework; sourceTree = "<absolute>"; };
-		8D5B49B6048680CD000E48DA /* NidaqPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NidaqPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BCE9C81180B39E00C0AC5B /* LabJackU6Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Plugin.h; sourceTree = "<group>"; };
+		81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabJackU6Plugin.cpp; sourceTree = "<group>"; };
+		81BCE9CB1180B3A600C0AC5B /* LabJackU6Device.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabJackU6Device.cpp; sourceTree = "<group>"; };
+		81BCE9CC1180B3A600C0AC5B /* LabJackU6Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Device.h; sourceTree = "<group>"; };
+		81BCE9CD1180B3A600C0AC5B /* LabJackU6Plugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Plugin_Prefix.pch; sourceTree = "<group>"; };
+		81BCE9D91180B6BF00C0AC5B /* u6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = u6.h; path = ../ThirdPartyLibraries/exodriver/examples/U6/u6.h; sourceTree = SOURCE_ROOT; };
+		81BCE9DA1180B6BF00C0AC5B /* u6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = u6.c; path = ../ThirdPartyLibraries/exodriver/examples/U6/u6.c; sourceTree = SOURCE_ROOT; };
+		81BCEAB21180EDE000C0AC5B /* LabJackU6Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabJackU6Plugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		FC2E0A0110D5C1840040B055 /* MWLibrary.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MWLibrary.xml; sourceTree = "<group>"; };
-		FCE4B7EC10F126AE000BDC69 /* nidaqmxbase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nidaqmxbase.framework; path = /Library/Frameworks/nidaqmxbase.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,6 @@
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				5C4B0A650DC79212001BC518 /* MonkeyWorksCore.framework in Frameworks */,
-				FCE4B7ED10F126AE000BDC69 /* nidaqmxbase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +94,6 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FC2E0A0110D5C1840040B055 /* MWLibrary.xml */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
@@ -99,6 +103,13 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				81BCE9CC1180B3A600C0AC5B /* LabJackU6Device.h */,
+				81BCE9CB1180B3A600C0AC5B /* LabJackU6Device.cpp */,
+				81BCE9C81180B39E00C0AC5B /* LabJackU6Plugin.h */,
+				81BCE9CD1180B3A600C0AC5B /* LabJackU6Plugin_Prefix.pch */,
+				81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */,
+				81BCE9D91180B6BF00C0AC5B /* u6.h */,
+				81BCE9DA1180B6BF00C0AC5B /* u6.c */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -106,7 +117,6 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FCE4B7EC10F126AE000BDC69 /* nidaqmxbase.framework */,
 				5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
@@ -126,7 +136,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* NidaqPlugin.bundle */,
+				81BCEAB21180EDE000C0AC5B /* LabJackU6Plugin.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* NidaqPlugin */ = {
+		8D5B49AC048680CD000E48DA /* LabJackU6Plugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "NidaqPlugin" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "LabJackU6Plugin" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
@@ -154,10 +164,10 @@
 			);
 			dependencies = (
 			);
-			name = NidaqPlugin;
+			name = LabJackU6Plugin;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = CoxlabCorePlugins;
-			productReference = 8D5B49B6048680CD000E48DA /* NidaqPlugin.bundle */;
+			productReference = 81BCEAB21180EDE000C0AC5B /* LabJackU6Plugin.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D5B49AC048680CD000E48DA /* NidaqPlugin */,
+				8D5B49AC048680CD000E48DA /* LabJackU6Plugin */,
 				5CFC67A50F2A848000552431 /* Everything */,
 			);
 		};
@@ -184,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
-				FC2E0A0210D5C1840040B055 /* MWLibrary.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "export FULL_NAME=${PRODUCT_NAME}.${WRAPPER_EXTENSION}\n\nmkdir -p \"${FINAL_INSTALL_DIR}/${FULL_NAME}\"\nrm -R \"${FINAL_INSTALL_DIR}/${FULL_NAME}\"\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_NAME}\" \"${FINAL_INSTALL_DIR}\"\ntouch \"/Library/MonkeyWorks/Plugins/NidaqPlugin.bundle\"\nrm -R \"/Library/MonkeyWorks/Plugins/NidaqPlugin.bundle\"\ncp -R \"/Library/Application Support/MonkeyWorks/Plugins/Core Plugins/NidaqPlugin.bundle\" \"/Library/MonkeyWorks/Plugins\"\n\n";
+			shellScript = "export FULL_NAME=${PRODUCT_NAME}.${WRAPPER_EXTENSION}\n\nmkdir -p \"${FINAL_INSTALL_DIR}/${FULL_NAME}\"\nrm -R \"${FINAL_INSTALL_DIR}/${FULL_NAME}\"\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_NAME}\" \"${FINAL_INSTALL_DIR}\"\ntouch \"/Library/MonkeyWorks/Plugins/LabJackU6Plugin.bundle\"\nrm -R \"/Library/MonkeyWorks/Plugins/LabJackU6Plugin.bundle\"\ncp -R \"/Library/Application Support/MonkeyWorks/Plugins/Core Plugins/LabJackU6Plugin.bundle\" \"/Library/MonkeyWorks/Plugins\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -211,6 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BCE9CA1180B39E00C0AC5B /* LabJackU6Plugin.cpp in Sources */,
+				81BCE9CE1180B3A600C0AC5B /* LabJackU6Device.cpp in Sources */,
+				81BCE9DB1180B6BF00C0AC5B /* u6.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		5CFC67A90F2A848400552431 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* NidaqPlugin */;
+			target = 8D5B49AC048680CD000E48DA /* LabJackU6Plugin */;
 			targetProxy = 5CFC67A80F2A848400552431 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -246,17 +258,25 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NidaqPlugin_Prefix.pch;
+				GCC_PREFIX_HEADER = LabJackU6Plugin_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
 					/Library/MonkeyWorks/include,
 					"$(MW_INCLUDE_DIR)",
 					/usr/include/libxml2,
+					/usr/local/include,
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/MonkeyWorks/Plugins;
-				LIBRARY_SEARCH_PATHS = "$(MW_LIB_DIR)";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = NidaqPlugin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(MW_LIB_DIR)",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-llabjackusb",
+					"-lusb-1.0",
+				);
+				PRODUCT_NAME = LabJackU6Plugin;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -289,7 +309,10 @@
 				FINAL_INSTALL_DIR = "$(APP_SUPPORT_DIR)/Plugins/Core Plugins";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = /Library/MonkeyWorks/include;
+				HEADER_SEARCH_PATHS = (
+					/Library/MonkeyWorks/include,
+					/usr/local/include,
+				);
 				LIBRARY_SEARCH_PATHS = "/Library/Frameworks/**";
 				MW_INCLUDE_DIR = "\"$(APP_SUPPORT_DIR)/Developer/include\"";
 				MW_LIB_DIR = "\"$(APP_SUPPORT_DIR)/Developer/lib\"";
@@ -388,7 +411,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "NidaqPlugin" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "LabJackU6Plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Development */,
