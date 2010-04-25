@@ -1,13 +1,28 @@
 *~
+
+# XCode temp files
 *.dep
 *~.nib
 *.swp
-
 build/
 
-#*.mode1v3
-#*.mode2v3
-#*.pbxuser
+# XCode user files
+*.mode1v3
+*.mode2v3
+*.pbxuser
 #*.perspective
 #*.perspectivev3
 
+# For C projects and autotools
+.deps
+.libs
+.dirstamp
+*.py[co]
+*.[oa]
+.*.swp
+/TAGS
+/autom4te.cache
+/config.log
+/config.status
+/stamp-directories
+/stamp-h1
