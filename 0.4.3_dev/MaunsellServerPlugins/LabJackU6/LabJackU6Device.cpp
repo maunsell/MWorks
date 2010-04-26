@@ -21,6 +21,7 @@
 
 #define LJU6_LEVERPRESS_FIO 0
 #define LJU6_REWARD_FIO     1
+#define LJU6_EMPIRICAL_DO_LATENCY_MS 1   // average when plugged into a highspeed hub.  About 8ms otherwise
 
 
 #define VERBOSE_IO_DEVICE 1
@@ -105,15 +106,31 @@ void LabJackU6Device::pulseDOHigh(int pulseLengthUS) {
     // Takes and releases pulseScheduleNodeLock
     // Takes and releases driver lock
 
-    // The DAQmxBaseWriteDigitalU32 function takes a millisecond to return, presumably
-    // because it is waiting for USB servicing.  We schedule the DOLow function before we
-    // make the call so that we don't add a millisecond to the total time.
+	// Set the DO high first
+    boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock DOhigh\n"); fflush(stdout);
+	mprintf("LabJackU6Device: setting pulse high %d ms (%lld)", pulseLengthUS / 1000, clock->getCurrentTimeUS());
+    MonkeyWorksTime t1 = clock->getCurrentTimeUS();  // to check elapsed time below
+    if (ljU6WriteDI(ljHandle, LJU6_REWARD_FIO, 1) == false) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: writing digital output high; device likely to not work from here on");
+        return;
+    }
+    lock.unlock();      //printf("unlock DOhigh\n"); fflush(stdout);
 
+    if (clock->getCurrentTimeUS() - t1 > 4000) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, 
+               "LJU6: Writing the DO took longer than 4ms.  Is the device connected to a high-speed hub?  Pulse length is wrong.");
+    }
+    
 	// Schedule endPulse call
-	boost::mutex::scoped_lock pLock(pulseScheduleNodeLock);
-	shared_ptr<LabJackU6Device> this_one = shared_from_this();
-	pulseScheduleNode = scheduler->scheduleMS(std::string(FILELINE ": ") + tag,
-											  pulseLengthUS / 1000.0, 
+    if (pulseLengthUS <= LJU6_EMPIRICAL_DO_LATENCY_MS+1) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "LJU6: requested pulse length %dms too short (<%dms), not doing digital IO", 
+               pulseLengthUS, LJU6_EMPIRICAL_DO_LATENCY_MS+1);
+    } else {
+        // long enough, do it
+        boost::mutex::scoped_lock pLock(pulseScheduleNodeLock);
+        shared_ptr<LabJackU6Device> this_one = shared_from_this();
+        pulseScheduleNode = scheduler->scheduleMS(std::string(FILELINE ": ") + tag,
+											  (pulseLengthUS / 1000.0) - LJU6_EMPIRICAL_DO_LATENCY_MS, 
 											  0, 
 											  1, 
 											  boost::bind(endPulse, this_one),
@@ -122,20 +139,12 @@ void LabJackU6Device::pulseDOHigh(int pulseLengthUS) {
 											  M_DEFAULT_IODEVICE_FAIL_SLOP_US,
 											  M_MISSED_EXECUTION_DROP);
 	
-    MonkeyWorksTime current = clock->getCurrentTimeUS();
-	mprintf("LabJackU6Device:  schedule endPulse callback at %lld us (%lld)", current, clock->getCurrentTimeUS());
-	highTimeUS = current;
-    pLock.unlock();
-
-	
-	// Set the DO high
-    boost::mutex::scoped_lock lock(ljU6DriverLock);  printf("lock DOhigh\n"); fflush(stdout);
-	mprintf("LabJackU6Device: setting pulse high %d ms (%lld)", pulseLengthUS / 1000, clock->getCurrentTimeUS());
-    if (ljU6WriteDI(ljHandle, LJU6_REWARD_FIO, 1) == false) {
-        mprintf("bug: writing digital output high; device likely to not work from here on");
-        return;
+        MonkeyWorksTime current = clock->getCurrentTimeUS();
+        if (VERBOSE_IO_DEVICE) {
+            mprintf("LabJackU6Device:  schedule endPulse callback at %lld us (%lld)", current, clock->getCurrentTimeUS());
+        }
+        highTimeUS = current;
     }
-    lock.unlock(); printf("unlock DOhigh\n"); fflush(stdout);
     
 }
 
@@ -147,10 +156,10 @@ void LabJackU6Device::pulseDOLow() {
     mprintf("LabJackU6Device: pulseDOLow at %lld us (pulse %lld us long)", current, current - highTimeUS);
     
     // set the DO low
-    boost::mutex::scoped_lock lock(ljU6DriverLock); printf("lock DOLow\n");
+    boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock DOLow\n");
 
     if (ljU6WriteDI(ljHandle, LJU6_REWARD_FIO, 0) == false) {
-        mprintf("bug: writing digital output low; device likely to not work from here on");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: writing digital output low; device likely to not work from here on");
         return;
     }
 }
@@ -168,10 +177,10 @@ bool LabJackU6Device::readDI()
 		return false;
 	}
 
-    boost::mutex::scoped_lock lock(ljU6DriverLock);  printf("lock readDI\n"); fflush(stdout);
+    boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock readDI\n"); fflush(stdout);
     
     if (!ljU6ReadDI(ljHandle, LJU6_LEVERPRESS_FIO, &state)) {
-        mprintf("Error reading DI, returning FALSE");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error reading DI, returning FALSE");
         return false;
     }
 
@@ -179,14 +188,16 @@ bool LabJackU6Device::readDI()
 	if (state != lastState) {
 		if (clock->getCurrentTimeUS() - lastDITransitionTimeUS < kDIDeadtimeUS) {
 			state = lastState;				// discard changes during deadtime
-			mprintf("LabJackU6Device: readDI, rejecting new read (last %lld now %lld, diff %lld)", lastDITransitionTimeUS, clock->getCurrentTimeUS(),
-					clock->getCurrentTimeUS() - lastDITransitionTimeUS);
+			mwarning(M_IODEVICE_MESSAGE_DOMAIN, 
+                     "LabJackU6Device: readDI, debounce rejecting new read (last %lld now %lld, diff %lld)", 
+                     lastDITransitionTimeUS, 
+                     clock->getCurrentTimeUS(),
+                     clock->getCurrentTimeUS() - lastDITransitionTimeUS);
 		}
 		lastState = state;					// record and report the transition
 		lastDITransitionTimeUS = clock->getCurrentTimeUS();
 	}
-    lock.unlock();
-    printf("unlock readDI\n"); fflush(stdout);
+    //lock.unlock();  //printf("unlock readDI\n"); fflush(stdout);
 	return(state);
 }
 
@@ -226,14 +237,14 @@ bool LabJackU6Device::attachPhysicalDevice(){
 	}
     
     this->variableSetup();
-    boost::mutex::scoped_lock lock(ljU6DriverLock);  printf("lock %s\n", "attachPhysicalDevice");
+    boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock %s\n", "attachPhysicalDevice");
     
     assert(ljHandle==NULL);  // should not try to configure if already open.  If we relax this in the future
     // go through this code and check that we clean up properly
     
     // Opening first found U6 over USB
     if( (ljHandle = openUSBConnection(-1)) == NULL) {
-        mprintf("Error opening LabJack U6.  Is it connected to USB?");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error opening LabJack U6.  Is it connected to USB?");
         return false;  // no cleanup needed
     }
     
@@ -242,7 +253,7 @@ bool LabJackU6Device::attachPhysicalDevice(){
     closeUSBConnection(ljHandle);
     sleep(1);
     if( (ljHandle = openUSBConnection(-1)) == NULL) {
-        mprintf("Error: could not reopen USB U6 device after reset");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: could not reopen USB U6 device after reset");
         return false;  // no cleanup needed
     }
     
@@ -320,7 +331,7 @@ bool LabJackU6Device::stopDeviceIO(){
 		mprintf("LabJackU6Device: stopDeviceIO");
 	}
 	if (!deviceIOrunning) {
-        mprintf("stopDeviceIO: already stopped on entry");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "stopDeviceIO: already stopped on entry");
 		return false;
 	}
 	
@@ -434,11 +445,11 @@ bool LabJackU6Device::ljU6ConfigPorts(HANDLE Handle) {
     //printf("*****************Output %x %x %x %x\n", sendDataBuff[0], sendDataBuff[1], sendDataBuff[2], sendDataBuff[3]);
     
     if(ehFeedback(Handle, sendDataBuff, 6, &Errorcode, &ErrorFrame, NULL, 0) < 0) {
-        mprintf("bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
         goto cleanup;
     }
     if(Errorcode) {
-        mprintf("ehFeedback: error with command, errorcode was %d");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
         goto cleanup;
     }
 
@@ -461,13 +472,13 @@ bool LabJackU6Device::ljU6ReadDI(HANDLE Handle, long Channel, long* State) {
     sendDataBuff[0] = 10;       //IOType is BitStateRead
     sendDataBuff[1] = Channel;  //IONumber
     
-    printf("entering ljU6ReadDI\n"); fflush(stdout);
+    //printf("entering ljU6ReadDI\n"); fflush(stdout);
     if(ehFeedback(Handle, sendDataBuff, 2, &Errorcode, &ErrorFrame, recDataBuff, 1) < 0) {
-        mprintf("bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
         return 0;
     }
     if(Errorcode) {
-        mprintf("ehFeedback: error with command, errorcode was %d");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
         return 0;
     }
     
@@ -485,11 +496,11 @@ bool LabJackU6Device::ljU6WriteDI(HANDLE Handle, long Channel, long State) {
     sendDataBuff[1] = Channel + 128*((State > 0) ? 1 : 0);  //IONumber(bits 0-4) + State (bit 7)
 
     if(ehFeedback(Handle, sendDataBuff, 2, &Errorcode, &ErrorFrame, NULL, 0) < 0) {
-        mprintf("bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
         goto cleanup;
     }
     if(Errorcode) {
-        mprintf("ehFeedback: error with command, errorcode was %d");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
         goto cleanup;
     }
     
