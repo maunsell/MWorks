@@ -1,0 +1,29 @@
+#
+# Makefile for liblabjackusb
+#
+#
+
+TARGET = liblabjackusb.so.2.0.2
+DESTINATION = /usr/local/lib
+
+HEADER = labjackusb.h
+HEADER_DESTINATION = /usr/local/include
+
+CFLAGS = -fPIC -g -Wall
+LIBFLAGS = -lusb-1.0 -lc
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+
+all: $(TARGET)
+
+$(TARGET): labjackusb.o
+	$(CC) -shared -Wl,-soname,liblabjackusb.so -o $(TARGET) labjackusb.o $(LIBFLAGS) 
+
+install: $(TARGET) 
+	install $(TARGET) $(DESTINATION)
+	install $(HEADER) $(HEADER_DESTINATION)
+	ldconfig $(DESTINATION)
+
+clean:
+	rm -f $(TARGET) *.o *~
