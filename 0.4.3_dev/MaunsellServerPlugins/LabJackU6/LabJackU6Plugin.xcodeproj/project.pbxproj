@@ -22,9 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		5C4B0A650DC79212001BC518 /* MonkeyWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */; };
+		8173563111861FDD0080AEB7 /* u6.c in Sources */ = {isa = PBXBuildFile; fileRef = 8173562F11861FDD0080AEB7 /* u6.c */; };
 		81BCE9CA1180B39E00C0AC5B /* LabJackU6Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */; };
 		81BCE9CE1180B3A600C0AC5B /* LabJackU6Device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9CB1180B3A600C0AC5B /* LabJackU6Device.cpp */; };
-		81BCE9DB1180B6BF00C0AC5B /* u6.c in Sources */ = {isa = PBXBuildFile; fileRef = 81BCE9DA1180B6BF00C0AC5B /* u6.c */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -45,13 +45,13 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		5C4B0A630DC79212001BC518 /* MonkeyWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCore.framework; path = /Library/Frameworks/MonkeyWorksCore.framework; sourceTree = "<absolute>"; };
+		8173562F11861FDD0080AEB7 /* u6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = u6.c; sourceTree = "<group>"; };
+		8173563011861FDD0080AEB7 /* u6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = u6.h; sourceTree = "<group>"; };
 		81BCE9C81180B39E00C0AC5B /* LabJackU6Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Plugin.h; sourceTree = "<group>"; };
 		81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabJackU6Plugin.cpp; sourceTree = "<group>"; };
 		81BCE9CB1180B3A600C0AC5B /* LabJackU6Device.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabJackU6Device.cpp; sourceTree = "<group>"; };
 		81BCE9CC1180B3A600C0AC5B /* LabJackU6Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Device.h; sourceTree = "<group>"; };
 		81BCE9CD1180B3A600C0AC5B /* LabJackU6Plugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabJackU6Plugin_Prefix.pch; sourceTree = "<group>"; };
-		81BCE9D91180B6BF00C0AC5B /* u6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = u6.h; path = ../ThirdPartyLibraries/exodriver/examples/U6/u6.h; sourceTree = SOURCE_ROOT; };
-		81BCE9DA1180B6BF00C0AC5B /* u6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = u6.c; path = ../ThirdPartyLibraries/exodriver/examples/U6/u6.c; sourceTree = SOURCE_ROOT; };
 		81BCEAB21180EDE000C0AC5B /* LabJackU6Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabJackU6Plugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -108,8 +108,8 @@
 				81BCE9C81180B39E00C0AC5B /* LabJackU6Plugin.h */,
 				81BCE9CD1180B3A600C0AC5B /* LabJackU6Plugin_Prefix.pch */,
 				81BCE9C91180B39E00C0AC5B /* LabJackU6Plugin.cpp */,
-				81BCE9D91180B6BF00C0AC5B /* u6.h */,
-				81BCE9DA1180B6BF00C0AC5B /* u6.c */,
+				8173562F11861FDD0080AEB7 /* u6.c */,
+				8173563011861FDD0080AEB7 /* u6.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 			files = (
 				81BCE9CA1180B39E00C0AC5B /* LabJackU6Plugin.cpp in Sources */,
 				81BCE9CE1180B3A600C0AC5B /* LabJackU6Device.cpp in Sources */,
-				81BCE9DB1180B6BF00C0AC5B /* u6.c in Sources */,
+				8173563111861FDD0080AEB7 /* u6.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

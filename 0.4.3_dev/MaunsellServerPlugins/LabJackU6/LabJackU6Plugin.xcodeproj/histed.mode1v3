@@ -228,6 +228,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,7 +281,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LabJackU6Device.cpp</string>
+								<string>u6.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,23 +331,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LabJackU6Device.cpp</string>
+										<string>u6.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>817356261185EBE80080AEB7</string>
+										<string>8173563F118620040080AEB7</string>
 										<key>history</key>
 										<array>
 											<string>8155406C1176662900C5D390</string>
 											<string>8155406E1176662900C5D390</string>
-											<string>81BCEB251180F28800C0AC5B</string>
 											<string>81BCEB7C1180F91E00C0AC5B</string>
 											<string>81BCED891184C35A00C0AC5B</string>
 											<string>81BCED8B1184C35A00C0AC5B</string>
 											<string>81BCED8C1184C35A00C0AC5B</string>
-											<string>81BCED8D1184C35A00C0AC5B</string>
-											<string>8173561E1185E8E70080AEB7</string>
-											<string>8173561F1185E8E70080AEB7</string>
+											<string>81735633118620040080AEB7</string>
+											<string>81735634118620040080AEB7</string>
+											<string>81735635118620040080AEB7</string>
+											<string>81735636118620040080AEB7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -357,9 +356,15 @@
 											<string>81BCEA0E1180E2A100C0AC5B</string>
 											<string>81BCEA5A1180E95000C0AC5B</string>
 											<string>81BCEA611180E95000C0AC5B</string>
-											<string>81BCEB271180F28800C0AC5B</string>
 											<string>81BCEB811180F91E00C0AC5B</string>
-											<string>817356201185E8E70080AEB7</string>
+											<string>81735637118620040080AEB7</string>
+											<string>81735638118620040080AEB7</string>
+											<string>81735639118620040080AEB7</string>
+											<string>8173563A118620040080AEB7</string>
+											<string>8173563B118620040080AEB7</string>
+											<string>8173563C118620040080AEB7</string>
+											<string>8173563D118620040080AEB7</string>
+											<string>8173563E118620040080AEB7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
