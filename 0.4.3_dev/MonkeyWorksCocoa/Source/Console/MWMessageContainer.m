@@ -106,17 +106,18 @@
 		
 	
 	
-	NSMutableAttributedString * consoleMsg = 
-		[ [NSMutableAttributedString alloc] 
-						initWithString:
-			[[NSDate dateWithTimeIntervalSince1970:
-				[altTimeValue doubleValue]]
-							 descriptionWithCalendarFormat:@"%H:%M:%S"
-												  timeZone:nil
-													locale:nil]	
-			
-							attributes:timeAttributes
-			];
+    // Format HH:MM:SS._MS._US ourselves.  Using the date functions doesn't buy us anything (including helping with overflow 
+    //       since the incoming value is a long long.  MH 100427
+    long long eTimeUS = [altTimeValue longLongValue]; 
+    NSMutableAttributedString * consoleMsg = 
+    [ [NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"%02lld:%02lld:%02lld.%03lld.%03lld",
+                                                         (eTimeUS/60/60/1000/1000)%100,  
+                                                         (eTimeUS/60/1000/1000)%100,
+                                                         (eTimeUS/1000/1000)%100,
+                                                         (eTimeUS/1000)%1000,
+                                                         (eTimeUS)%1000]
+                                            attributes:timeAttributes];
+    
 	/*  NSString * consoleMsg = [NSString stringWithFormat:@"%@",
 								[[NSDate dateWithTimeIntervalSince1970:
 									[altTimeValue doubleValue]]
@@ -134,7 +135,7 @@ consoleMsg = [consoleMsg stringByAppendingString:[NSString
 							initWithString:
 			[NSString stringWithFormat:@":  %@\n",message]
 			
-								attributes: messageAttributes];
+         attributes: messageAttributes];
 	
 	[consoleMsg appendAttributedString:[appendstring autorelease]];
 	[consoleMsg autorelease];

@@ -311,7 +311,7 @@
 			
 			MonkeyWorksTime eventTime = [event time];
 			
-			NSNumber *time = [[[NSNumber alloc] initWithLongLong:eventTime/1000] autorelease];
+			NSNumber *time = [[[NSNumber alloc] initWithLongLong:eventTime] autorelease]; // This time is in US
 			
 			NSNumber *localConsole = [delegate isLocalMessage:[NSNumber numberWithInt:payload.getElement(M_MESSAGE_ORIGIN).getInteger()]];
 			if(!showGenericMessages && msgType == M_GENERIC_MESSAGE){
@@ -325,7 +325,7 @@
 			if(!showErrorMessages && msgType == M_ERROR_MESSAGE){
 				return;
 			}
-			
+
 			[self postMessage:message 
 					 atNumber:time
 					   ofType:msgType
