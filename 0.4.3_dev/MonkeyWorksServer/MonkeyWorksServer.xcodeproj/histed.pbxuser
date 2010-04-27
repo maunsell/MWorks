@@ -138,7 +138,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 293989230.831348;
+		modificationTime = 294097707.217903;
 		state = 0;
 		symbolName = attachPhysicalDevice;
 	};
@@ -153,7 +153,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 293989230.851202;
+		modificationTime = 294097707.238986;
 		state = 0;
 		symbolName = "attachPhysicalDevice()";
 	};
@@ -168,7 +168,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 293989230.90224;
+		modificationTime = 294097707.283985;
 		state = 0;
 		symbolName = "LabJackU6Device::attachPhysicalDevice()";
 	};
@@ -183,7 +183,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 293989230.919598;
+		modificationTime = 294097707.308972;
 		state = 0;
 		symbolName = "in LabJackU6Device.cpp at 249";
 	};
