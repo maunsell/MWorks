@@ -19,8 +19,8 @@
 #define kBufferLength	2048
 #define kDIDeadtimeUS	5000			
 
-#define LJU6_LEVERPRESS_FIO 0
-#define LJU6_REWARD_FIO     1
+#define LJU6_LEVERPRESS_FIO 1
+#define LJU6_REWARD_FIO     0
 #define LJU6_EMPIRICAL_DO_LATENCY_MS 1   // average when plugged into a highspeed hub.  About 8ms otherwise
 
 
@@ -66,6 +66,8 @@ LabJackU6Device::LabJackU6Device(const boost::shared_ptr <Scheduler> &a_schedule
 	update_period = update_time;
 	deviceIOrunning = false;
     ljHandle = NULL;
+    lastLeverPressValue = -1;  // -1 means always report first value
+    lastDITransitionTimeUS = 0; 
 }
 
 
@@ -183,7 +185,8 @@ bool LabJackU6Device::readDI()
         merror(M_IODEVICE_MESSAGE_DOMAIN, "Error reading DI, returning FALSE");
         return false;
     }
-
+    //printf("ReadDI: state %5d, time %10lld\n", state, clock->getCurrentTimeUS()); fflush(stdout);
+    
     // software debouncing
 	if (state != lastState) {
 		if (clock->getCurrentTimeUS() - lastDITransitionTimeUS < kDIDeadtimeUS) {
@@ -213,8 +216,14 @@ void *update_lever(const shared_ptr<LabJackU6Device> &gp){
 bool LabJackU6Device::updateSwitch() {	
 	
 	bool switchValue = readDI();
-	//tell channel to read switch
-	leverPress->setValue(Data(switchValue));
+
+    // Change MW variable value only if switch state is unchanged, or this is the first time through
+    if ( (lastLeverPressValue == -1) // -1 means first time through
+        || (switchValue != lastLeverPressValue) ) {
+        
+        leverPress->setValue(Data(switchValue));
+        lastLeverPressValue = switchValue;
+    }
 
 	return true;
 }
@@ -257,7 +266,11 @@ bool LabJackU6Device::attachPhysicalDevice(){
         return false;  // no cleanup needed
     }
     
-    ljU6ConfigPorts(ljHandle); // Do physical port setup
+    // Do physical port setup
+    if (!ljU6ConfigPorts(ljHandle)) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: configuring U6\n");
+        return false;  // no cleanup needed
+    }
     
     if (VERBOSE_IO_DEVICE) {
         mprintf("LabJackU6Device: attachPhysicalDevice; Found LabJackU6");

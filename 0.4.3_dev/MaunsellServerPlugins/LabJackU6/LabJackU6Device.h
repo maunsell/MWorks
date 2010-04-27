@@ -47,7 +47,7 @@ class LabJackU6Device : public IODevice {
 		MonkeyWorksTime update_period;
 		
 		bool active;
-		bool lastLeverPressValue;	
+		int lastLeverPressValue;	
 		boost::mutex active_mutex;
 		bool deviceIOrunning;
 
