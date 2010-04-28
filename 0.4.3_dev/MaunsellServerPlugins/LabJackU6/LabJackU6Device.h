@@ -17,7 +17,7 @@
 #include "labjackusb.h"
 
 #undef VERBOSE_IO_DEVICE
-#define VERBOSE_IO_DEVICE 1
+#define VERBOSE_IO_DEVICE 0  // verbosity level is 0-2, 2 is maximum
 
 using namespace std;
 

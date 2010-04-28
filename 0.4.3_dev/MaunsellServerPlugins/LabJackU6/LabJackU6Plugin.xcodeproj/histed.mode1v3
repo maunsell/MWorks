@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>817357111188D2A70080AEB7</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>LabJackU6Device.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>817357121188D2A70080AEB7</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>LabJackU6Device.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>817357131188D2A70080AEB7</string>
+						<key>history</key>
+						<array>
+							<string>8173570B1188D2910080AEB7</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {933, 915}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>595 71 933 956 0 0 1920 1178 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -228,8 +269,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,6 +320,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -318,12 +358,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>u6.h</string>
+								<string>LabJackU6Device.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,23 +373,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>u6.h</string>
+										<string>LabJackU6Device.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8173563F118620040080AEB7</string>
+										<string>817357101188D2A70080AEB7</string>
 										<key>history</key>
 										<array>
 											<string>8155406C1176662900C5D390</string>
 											<string>8155406E1176662900C5D390</string>
 											<string>81BCEB7C1180F91E00C0AC5B</string>
-											<string>81BCED891184C35A00C0AC5B</string>
 											<string>81BCED8B1184C35A00C0AC5B</string>
 											<string>81BCED8C1184C35A00C0AC5B</string>
-											<string>81735633118620040080AEB7</string>
 											<string>81735634118620040080AEB7</string>
 											<string>81735635118620040080AEB7</string>
-											<string>81735636118620040080AEB7</string>
+											<string>817356FA1188D16B0080AEB7</string>
+											<string>8173570D1188D2A70080AEB7</string>
+											<string>8173570E1188D2A70080AEB7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -357,14 +399,18 @@
 											<string>81BCEA5A1180E95000C0AC5B</string>
 											<string>81BCEA611180E95000C0AC5B</string>
 											<string>81BCEB811180F91E00C0AC5B</string>
-											<string>81735637118620040080AEB7</string>
 											<string>81735638118620040080AEB7</string>
 											<string>81735639118620040080AEB7</string>
-											<string>8173563A118620040080AEB7</string>
-											<string>8173563B118620040080AEB7</string>
-											<string>8173563C118620040080AEB7</string>
-											<string>8173563D118620040080AEB7</string>
-											<string>8173563E118620040080AEB7</string>
+											<string>817356FD1188D16B0080AEB7</string>
+											<string>817356FE1188D16B0080AEB7</string>
+											<string>817356FF1188D16B0080AEB7</string>
+											<string>817357001188D16B0080AEB7</string>
+											<string>817357011188D16B0080AEB7</string>
+											<string>817357021188D16B0080AEB7</string>
+											<string>817357031188D16B0080AEB7</string>
+											<string>817357041188D16B0080AEB7</string>
+											<string>817357051188D16B0080AEB7</string>
+											<string>8173570F1188D2A70080AEB7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -422,9 +468,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>817355E51185DD5F0080AEB7</string>
+				<string>817357071188D16B0080AEB7</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>817355E61185DD5F0080AEB7</string>
+				<string>817357081188D16B0080AEB7</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -560,6 +606,7 @@
 	<array>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>8197F3A911740E6100BE5111</string>
+		<string>817357111188D2A70080AEB7</string>
 		<string>/Users/histed/MonkeyWorks-trunk-git/0.4.3_dev/MaunsellServerPlugins/LabJackU6/LabJackU6Plugin.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -604,7 +651,7 @@
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
-								<string>{{0, 172}, {1169, 333}}</string>
+								<string>{{0, 105}, {1169, 400}}</string>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
@@ -642,7 +689,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>8197F3A911740E6100BE5111</string>
-				<string>817355E71185DD5F0080AEB7</string>
+				<string>817356EF1188D0810080AEB7</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -858,8 +905,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>8173561B1185E88F0080AEB7</string>
-				<string>8173561C1185E88F0080AEB7</string>
+				<string>817356F71188D0810080AEB7</string>
+				<string>817356F81188D0810080AEB7</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

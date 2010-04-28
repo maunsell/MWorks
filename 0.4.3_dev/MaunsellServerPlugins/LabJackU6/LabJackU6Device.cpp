@@ -24,7 +24,6 @@
 #define LJU6_EMPIRICAL_DO_LATENCY_MS 1   // average when plugged into a highspeed hub.  About 8ms otherwise
 
 
-#define VERBOSE_IO_DEVICE 1
 
 using namespace mw;
 
@@ -56,7 +55,7 @@ LabJackU6Device::LabJackU6Device(const boost::shared_ptr <Scheduler> &a_schedule
                                  const boost::shared_ptr <Variable> _leverPress,
                                  const MonkeyWorksTime update_time)
 {
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJackU6Device: constructor");
 	}
 	scheduler = a_scheduler;
@@ -78,7 +77,7 @@ LabJackU6Device::LabJackU6Device(const LabJackU6Device& copy){
 
 // Destructor
 LabJackU6Device::~LabJackU6Device(){ 
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJackU6Device: destructor");
 	}
 	if (pulseScheduleNode != NULL) {
@@ -94,7 +93,7 @@ LabJackU6Device::~LabJackU6Device(){
 void *endPulse(const shared_ptr<LabJackU6Device> &gp){
 	shared_ptr <Clock> clock = Clock::instance();			
     // Does not lock, just calls pulseDOLow()
-    if (VERBOSE_IO_DEVICE) {
+    if (VERBOSE_IO_DEVICE >= 2) {
         mprintf("LabJackU6Device: endPulse callback at %lld us", clock->getCurrentTimeUS());
     }
     
@@ -155,7 +154,9 @@ void LabJackU6Device::pulseDOLow() {
 	shared_ptr <Clock> clock = Clock::instance();    
     MonkeyWorksTime current = clock->getCurrentTimeUS();
     
-    mprintf("LabJackU6Device: pulseDOLow at %lld us (pulse %lld us long)", current, current - highTimeUS);
+    if (VERBOSE_IO_DEVICE >= 1) {
+        mprintf("LabJackU6Device: pulseDOLow at %lld us (pulse %lld us long)", current, current - highTimeUS);
+    };
     
     // set the DO low
     boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock DOLow\n");
@@ -241,7 +242,7 @@ bool LabJackU6Device::attachPhysicalDevice(){
 
 	attached_device = new IOPhysicalDeviceReference(0, "LabJackU6");
 	
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJacU6Device: attachPhysicalDevice");
 	}
     
@@ -272,8 +273,8 @@ bool LabJackU6Device::attachPhysicalDevice(){
         return false;  // no cleanup needed
     }
     
-    if (VERBOSE_IO_DEVICE) {
-        mprintf("LabJackU6Device: attachPhysicalDevice; Found LabJackU6");
+    if (VERBOSE_IO_DEVICE >= 0) { // i.e. always
+        mprintf("LabJackU6Device: attachPhysicalDevice: found LabJackU6");
         // we should print more USB device info here
     }
     
@@ -283,7 +284,7 @@ bool LabJackU6Device::attachPhysicalDevice(){
 
 bool LabJackU6Device::startup(){
 	// Do nothing right now
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJackU6Device: startup");
 	}
 	return true;
@@ -292,7 +293,7 @@ bool LabJackU6Device::startup(){
 
 bool LabJackU6Device::shutdown(){
 	// Do nothing right now
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJackU6Device: shutdown");
 	}
 	return true;
@@ -302,7 +303,7 @@ bool LabJackU6Device::shutdown(){
 bool LabJackU6Device::startDeviceIO(){
     // Start the scheduled IO on the LabJackU6.  This starts a thread that reads the input ports
 	
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 1) {
 		mprintf("LabJackU6Device: startDeviceIO");
 	}
 	if (deviceIOrunning) {
@@ -340,7 +341,7 @@ bool LabJackU6Device::stopDeviceIO(){
 
     // Stop the LabJackU6 collecting data.  This is typically called at the end of each trial.
     
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 1) {
 		mprintf("LabJackU6Device: stopDeviceIO");
 	}
 	if (!deviceIOrunning) {
@@ -427,7 +428,7 @@ void LabJackU6Device::variableSetup() {
 }
 
 void LabJackU6Device::detachPhysicalDevice() {
-	if (VERBOSE_IO_DEVICE) {
+	if (VERBOSE_IO_DEVICE >= 1) {
 		mprintf("LabJackU6Device: detachPhysicalDevice");
 	}
     assert(connected == true); // "Was not connected on entry to detachPhysicalDevice");

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <monkeyml version="1.0">
     <io_devices _id="id41139455" tag="IO Devices">
-        <iodevice _id="id41139460" tag="ITC18" type="ITC18" alt="LabJackU6"></iodevice>
         <iodevice _id="id41139470" tag="LabJackU6" priority="" type="LabJackU6" data_interval="10ms" pulse_duration="rewardDuration_us" pulse_on="juice" lever_press="TTLchannel0" alt=""></iodevice>
     </io_devices>
     <variables _id="id41139491" tag="Variables">
@@ -95,7 +94,6 @@
                         <action _id="id41140442" type="if" tag="if fakeMouse" condition="!doLever">
                             <action _id="id41140452" type="start_timer" tag="Start Fake Mouse Press Timer" timer="fakeMousePressTimer" timebase="" duration="rand(fakeMouseMinPressMs, fakeMouseMaxPressMs)" duration_units="ms"></action>
                         </action>
-                        <action _id="id41140468" type="report" tag="Report OpenITC" message="In OpenITC"></action>
                         <transition _id="id41140478" type="conditional" tag="If Lever Down, Go To Hold Lever" condition="TTLchannel0 == 1" target="HoldLever"></transition>
                         <transition _id="id41140490" type="timer_expired" tag="If fakeMousePress expired, go to HoldLever" target="HoldLever" timer="fakeMousePressTimer"></transition>
                     </task_system_state>
@@ -128,11 +126,8 @@
                         <action _id="id41140766" tag="Report StimOn" full_name="ReportDigital" type="report" message="StimOn (still holding; signaling release ok)"></action>
                         <action _id="id41140778" type="start_timer" tag="Start Too Fast Timer" timer="tooFastTimer" timebase="" duration="tooFastTimeMs" duration_units="ms"></action>
                         <action _id="id41140794" type="start_timer" tag="Start React Timer" timer="reactTimeTimer" timebase="" duration="reactTimeMs" duration_units="ms"></action>
-                        <action _id="id41140811" tag="Report 1" full_name="ReportDigital" type="report" message="Report - 1"></action>
                         <action _id="id41140823" tag="Queue Stimulus" type="queue_stimulus" stimulus="imageStimulus"></action>
-                        <action _id="id41140832" tag="Report 2" full_name="ReportDigital" type="report" message="Report - 2"></action>
                         <action _id="id41140844" tag="Update Stimulus" type="update_stimulus_display"></action>
-                        <action _id="id41140852" tag="Report 4" full_name="ReportDigital" type="report" message="Report - 4"></action>
                         <action _id="id41140864" type="if" tag="Conditionally Execute Actions" condition="doAuditoryReleaseStim">
                             <action _id="id41140874" tag="Play stimOnSound" type="play_sound" sound="stimOnSound"></action>
                         </action>
@@ -141,7 +136,6 @@
                     </task_system_state>
                     <task_system_state _id="id41140901" tag="CheckTooFastTime" interruptible="YES">
                         <action_marker _id="id41140909" _unmoveable="1" tag="Actions"></action_marker>
-                        <action _id="id41140917" tag="Report CheckTooFastTime" full_name="ReportDigital" type="report" message="CheckTooFastTime"></action>
                         <transition_marker _id="id41140929" _unmoveable="1" tag="Transitions"></transition_marker>
                         <transition _id="id41140937" type="timer_expired" tag="if tooFastTimer expired, go to React" target="React" timer="tooFastTimer"></transition>
                         <transition _id="id41140949" type="conditional" tag="If LeverUp, go to EarlyRelease" condition="TTLchannel0 == 0 &amp;&amp; doLever == 1" target="EarlyRelease"></transition>
