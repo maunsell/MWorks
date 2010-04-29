@@ -19,6 +19,11 @@
 #undef VERBOSE_IO_DEVICE
 #define VERBOSE_IO_DEVICE 0  // verbosity level is 0-2, 2 is maximum
 
+#define LJU6_DITASK_UPDATE_PERIOD_US 15000    
+#define LJU6_DITASK_WARN_SLOP_US     10000
+#define LJU6_DITASK_FAIL_SLOP_US     15000
+
+
 using namespace std;
 
 namespace mw {
@@ -44,7 +49,7 @@ class LabJackU6Device : public IODevice {
 		boost::shared_ptr <Variable> pulseDurationMS;
 		boost::shared_ptr <Variable> pulseOn;
 		boost::shared_ptr <Variable> leverPress;
-		MonkeyWorksTime update_period;
+		//MonkeyWorksTime update_period;  MH this is now hardcoded, users should not change this
 		
 		bool active;
 		int lastLeverPressValue;	
@@ -61,8 +66,8 @@ class LabJackU6Device : public IODevice {
 		LabJackU6Device(const boost::shared_ptr <Scheduler> &a_scheduler,
 					const boost::shared_ptr <Variable> _pulseDurationMS,
 					const boost::shared_ptr <Variable> _pulseOn,
-					const boost::shared_ptr <Variable> _leverPress,
-					const MonkeyWorksTime update_time);
+                    const boost::shared_ptr <Variable> _leverPress);
+
 		~LabJackU6Device();
         LabJackU6Device(const LabJackU6Device& copy);
 

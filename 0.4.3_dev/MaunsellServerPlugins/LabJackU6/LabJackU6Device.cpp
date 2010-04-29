@@ -52,8 +52,7 @@ using namespace mw;
 LabJackU6Device::LabJackU6Device(const boost::shared_ptr <Scheduler> &a_scheduler,
                                  const boost::shared_ptr <Variable> _pulseDurationMS,
                                  const boost::shared_ptr <Variable> _pulseOn,
-                                 const boost::shared_ptr <Variable> _leverPress,
-                                 const MonkeyWorksTime update_time)
+                                 const boost::shared_ptr <Variable> _leverPress)
 {
 	if (VERBOSE_IO_DEVICE >= 2) {
 		mprintf("LabJackU6Device: constructor");
@@ -62,7 +61,6 @@ LabJackU6Device::LabJackU6Device(const boost::shared_ptr <Scheduler> &a_schedule
 	pulseDurationMS = _pulseDurationMS;
 	pulseOn = _pulseOn;
 	leverPress = _leverPress;
-	update_period = update_time;
 	deviceIOrunning = false;
     ljHandle = NULL;
     lastLeverPressValue = -1;  // -1 means always report first value
@@ -183,7 +181,10 @@ bool LabJackU6Device::readDI()
     boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock readDI\n"); fflush(stdout);
     
     if (!ljU6ReadDI(ljHandle, LJU6_LEVERPRESS_FIO, &state)) {
-        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error reading DI, returning FALSE");
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error reading DI, stopping IO and returning FALSE");
+
+        stopDeviceIO();  // We are seeing USB errors causing this, and the U6 doesn't work anyway, so might as well stop the threads
+        Debugger();
         return false;
     }
     //printf("ReadDI: state %5d, time %10lld\n", state, clock->getCurrentTimeUS()); fflush(stdout);
@@ -208,7 +209,13 @@ bool LabJackU6Device::readDI()
 // External function for scheduling
 
 void *update_lever(const shared_ptr<LabJackU6Device> &gp){
+	//shared_ptr <Clock> clock = Clock::instance();
+    //MonkeyWorksTime st = clock->getCurrentTimeUS();
+
 	gp->updateSwitch();                 
+    
+    // MH 100429: only time elapsed in this function is in readDI()  (which is 0.7-1.2ms with a fast hub)
+    //fprintf(stderr, "update_lever elapsed %10d us\n", clock->getCurrentTimeUS()-st);
 	return(NULL);
 }
 
@@ -319,18 +326,17 @@ bool LabJackU6Device::startDeviceIO(){
 	
 	setActive(true);
 	deviceIOrunning = true;
-	
+
 	shared_ptr<LabJackU6Device> this_one = shared_from_this();
 	pollScheduleNode = scheduler->scheduleUS(std::string(FILELINE ": ") + tag,
-														  (MonkeyWorksTime)0, 
-														  update_period, 
-														  M_REPEAT_INDEFINITELY, 
-														  boost::bind(update_lever, 
-																	  this_one),
-														  M_DEFAULT_IODEVICE_PRIORITY,
-														  M_DEFAULT_IODEVICE_WARN_SLOP_US,
-														  M_DEFAULT_IODEVICE_FAIL_SLOP_US,
-														  M_MISSED_EXECUTION_DROP);
+                                             (MonkeyWorksTime)0, 
+                                             LJU6_DITASK_UPDATE_PERIOD_US, 
+                                             M_REPEAT_INDEFINITELY, 
+                                             boost::bind(update_lever, this_one),
+                                             M_DEFAULT_IODEVICE_PRIORITY,
+                                             LJU6_DITASK_WARN_SLOP_US,
+                                             LJU6_DITASK_FAIL_SLOP_US,                                             
+                                             M_MISSED_EXECUTION_DROP);
 	//schedule_nodes.push_back(pollScheduleNode);       
 	schedule_nodes_lock.unlock();
 
@@ -373,11 +379,8 @@ boost::shared_ptr<mw::Component> LabJackU6DeviceFactory::createObject(std::map<s
 	const char *PULSE_DURATION = "pulse_duration";
 	const char *PULSE_ON = "pulse_on";
 	const char *LEVER_PRESS = "lever_press";
-	const char *UPDATE_PERIOD = "data_interval";
 	
-	REQUIRE_ATTRIBUTES(parameters, PULSE_DURATION, UPDATE_PERIOD);
-	
-	MonkeyWorksTime update_period = reg->getNumber(parameters.find(UPDATE_PERIOD)->second);	
+	REQUIRE_ATTRIBUTES(parameters, PULSE_DURATION);
 	
 	boost::shared_ptr<mw::Variable> pulse_duration = boost::shared_ptr<mw::Variable>(new mw::ConstantVariable(Data(M_INTEGER, 0)));	
 	if(parameters.find(PULSE_DURATION) != parameters.end()) {
@@ -411,8 +414,8 @@ boost::shared_ptr<mw::Component> LabJackU6DeviceFactory::createObject(std::map<s
 	boost::shared_ptr <mw::Component> new_daq = boost::shared_ptr<mw::Component>(new LabJackU6Device(scheduler,
 																								  pulse_duration, 
 																								  pulse_on, 
-																								  lever_press,
-																								  update_period));
+                                                                                                     lever_press));
+
 																								  
 
 	return new_daq;
