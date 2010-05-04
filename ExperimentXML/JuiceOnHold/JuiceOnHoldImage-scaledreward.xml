@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 <monkeyml version="1.0">
     <io_devices _id="id40008903" tag="IO Devices">
-        <iodevice _id="id40008908" tag="FM" priority="" type="fake_monkey" id="" _error="You must specify at least one channel on each IO device"></iodevice>
-        <iodevice _id="id40008922" tag="ITC" priority="" alt="FM" type="ITC18" id="" _error="You must specify at least one channel on each IO device">
-            <iochannel _id="id40008938" device="ITC18" variable="TTLchannel0" capability="ITC18_TTL_INPUT0" data_type="digital" direction="input" synchrony="hardware_timed_synchronous" range_min="0" range_max="5" resolution="1" update_interval="5ms" data_interval="0.5ms" tag="ioTTLchannel0" TTL_trigger_port="0" pre_trigger_interval="5ms" post_trigger_interval="5ms"></iochannel>
-            <iochannel _id="id40008974" variable="juice" capability="ITC18_TTL_ASYCH_OUT00" data_type="pulse_active_high" direction="output" synchrony="asynchronous" range_min="0" range_max="5" resolution="1" update_interval="3ms" data_interval="1ms" TTL_trigger_port="0" pre_trigger_interval="5ms" post_trigger_interval="5ms" tag="juiceChannel"></iochannel>
-            <iochannel _id="_id0" variable="LED" capability="ITC18_TTL_ASYCH_OUT02" data_type="digital" direction="output" synchrony="asynchronous" range_min="0" range_max="5" resolution="1" update_interval="3ms" data_interval="1ms" TTL_trigger_port="0" pre_trigger_interval="5ms" post_trigger_interval="5ms" tag="LEDChannel"></iochannel>
+        <iodevice _id="id41139470" tag="LabJackU6" priority="" type="LabJackU6" pulse_duration="rewardDuration_us" pulse_on="juice" lever_press="TTLchannel0" alt="">
         </iodevice>
     </io_devices>
     <variables _id="id40009008" tag="Variables">
@@ -69,11 +65,11 @@
         </folder>
     </variables>
     <sounds _id="id40009717" tag="Sounds">
-        <sound _id="id40009722" tag="leverPressSound" type="wav_file" path="/Users/histed/MW-ExperimentXML-maunsell/JuiceOnHold/wavs/7G.wav"></sound>
+        <sound _id="id40009722" tag="leverPressSound" type="wav_file" path="wavs/7G.wav"></sound>
         <sound _id="id40009733" tag="waitingForLeverSound" type="wav_file" path="wavs/trialStart-F10e-short.wav"></sound>
-        <sound _id="id40009743" tag="stimOnSound" type="wav_file" path="/Users/histed/MW-ExperimentXML-maunsell/JuiceOnHold/wavs/5C.wav"></sound>
-        <sound _id="id40009753" tag="correctSound" type="wav_file" path="/Users/histed/MW-ExperimentXML-maunsell/JuiceOnHold/wavs/shortCorrect.wav"></sound>
-        <sound _id="id40009763" tag="incorrectSound" type="wav_file" path="/Users/histed/MW-ExperimentXML-maunsell/JuiceOnHold/wavs/incorrectMouse.wav"></sound>
+        <sound _id="id40009743" tag="stimOnSound" type="wav_file" path="wavs/5C.wav"></sound>
+        <sound _id="id40009753" tag="correctSound" type="wav_file" path="wavs/shortCorrect.wav"></sound>
+        <sound _id="id40009763" tag="incorrectSound" type="wav_file" path="wavs/incorrectMouse.wav"></sound>
         <sound _id="id40009773" tag="rewardSound" type="wav_file" path="wavs/shortCorrect.wav"></sound>
     </sounds>
     <stimuli _id="id40009783" tag="Stimuli">
