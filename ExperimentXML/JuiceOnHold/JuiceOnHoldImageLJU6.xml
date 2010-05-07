@@ -183,6 +183,8 @@
                         <action _id="id40011018" type="assignment" tag="failure++" variable="failure" value="failure+1"></action>
                         <action _id="id40011030" type="assignment" tag="consecCorrects = 0" variable="consecCorrects" value="0"></action>
                         <action _id="id40011042" tag="Play incorrectSound" type="play_sound" sound="incorrectSound"></action>
+                        <action _id="id41011536" tag="Dequeue Stimulus 0" type="dequeue_stimulus" stimulus="imageStimulus"></action>
+                        <action _id="id41011546" tag="Update Stimulus 2" type="update_stimulus_display"></action>
                         <action _id="id40011051" type="start_timer" tag="Start earlyTimeoutTimer" timer="earlyTimeoutTimer" timebase="" duration="earlyTimeoutMs" duration_units="ms"></action>
                         <transition_marker _id="id40011068" _unmoveable="1" tag="Transitions"></transition_marker>
                         <transition _id="id40011076" type="timer_expired" tag="If earlyTimeoutTimer expired go to EndTrial" target="EndTrial" timer="earlyTimeoutTimer"></transition>

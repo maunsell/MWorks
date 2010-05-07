@@ -84,7 +84,7 @@ input.juiceTimesMsCell{thisTrialN} = juiceAmtsMs;
 
 %% run subfunctions
 try
-  addpath('/Users/histed/MonkeyWorks-trunk/MatlabToolbox/tools-mh');
+  addpath('/Users/histed/MonkeyWorks-trunk-git/MatlabToolbox/tools-mh');
   
   input = saveMatlabState(data_struct, input);
   
