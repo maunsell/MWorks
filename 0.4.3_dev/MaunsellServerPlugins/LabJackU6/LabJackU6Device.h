@@ -80,6 +80,7 @@ class LabJackU6Device : public IODevice {
 		virtual bool updateSwitch();
         void detachPhysicalDevice();
         void variableSetup();
+        bool setupU6PortsAndRestartIfDead();
 
 
 		bool readDI();

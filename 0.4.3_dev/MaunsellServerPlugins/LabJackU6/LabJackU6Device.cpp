@@ -250,7 +250,7 @@ bool LabJackU6Device::attachPhysicalDevice(){
 	attached_device = new IOPhysicalDeviceReference(0, "LabJackU6");
 	
 	if (VERBOSE_IO_DEVICE >= 2) {
-		mprintf("LabJacU6Device: attachPhysicalDevice");
+		mprintf("LabJackU6Device: attachPhysicalDevice");
 	}
     
     this->variableSetup();
@@ -264,21 +264,9 @@ bool LabJackU6Device::attachPhysicalDevice(){
         merror(M_IODEVICE_MESSAGE_DOMAIN, "Error opening LabJack U6.  Is it connected to USB?");
         return false;  // no cleanup needed
     }
+    ljU6DriverLock.unlock();
     
-    // To make sure the device is in a known state, force a USB re-enumerate, and reconnect
-    libusb_reset_device((libusb_device_handle *)ljHandle);
-    closeUSBConnection(ljHandle);
-    sleep(1);
-    if( (ljHandle = openUSBConnection(-1)) == NULL) {
-        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: could not reopen USB U6 device after reset");
-        return false;  // no cleanup needed
-    }
-    
-    // Do physical port setup
-    if (!ljU6ConfigPorts(ljHandle)) {
-        merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: configuring U6\n");
-        return false;  // no cleanup needed
-    }
+    setupU6PortsAndRestartIfDead();
     
     if (VERBOSE_IO_DEVICE >= 0) { // i.e. always
         mprintf("LabJackU6Device: attachPhysicalDevice: found LabJackU6");
@@ -288,6 +276,39 @@ bool LabJackU6Device::attachPhysicalDevice(){
     return true;
 }
 
+bool LabJackU6Device::setupU6PortsAndRestartIfDead() {
+    // This is not a pleasant solution, but it works for now
+    // takes and releases lock
+    
+    boost::mutex::scoped_lock lock(ljU6DriverLock);  
+
+    assert(ljHandle != NULL);  // you must have opened before calling this
+
+    // Do physical port setup
+    if (!ljU6ConfigPorts(ljHandle)) {
+        // assume dead
+        
+        // Force a USB re-enumerate, and reconnect
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "LJU6 found dead!!!  Restarting.  bug: should track this down with LabJack Co.");
+        libusb_reset_device((libusb_device_handle *)ljHandle);
+        closeUSBConnection(ljHandle);
+        sleep(0.25); // histed: MaunsellMouse1 - 0.1s not enough, 0.2 works, add a little padding
+        mwarning(M_IODEVICE_MESSAGE_DOMAIN, "Sleeping for 250ms after restarting LJU6");  
+    
+        if( (ljHandle = openUSBConnection(-1)) == NULL) {
+            merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: could not reopen USB U6 device after reset; U6 will not work now.");
+            return false;  // no cleanup needed
+        }
+    
+        // Redo port setup
+        if (!ljU6ConfigPorts(ljHandle)) {
+            merror(M_IODEVICE_MESSAGE_DOMAIN, "Error: configuring U6 after restart, U6 will not work now\n");
+            return false;  // no cleanup needed
+        }
+    }
+
+    return true;
+}
 
 bool LabJackU6Device::startup(){
 	// Do nothing right now
@@ -314,13 +335,13 @@ bool LabJackU6Device::startDeviceIO(){
 		mprintf("LabJackU6Device: startDeviceIO");
 	}
 	if (deviceIOrunning) {
-		mwarning(M_IODEVICE_MESSAGE_DOMAIN,
-				 "LabJackU6Device startDeviceIO:  startDeviceIO request was made without first stopping IO.  Attempting to stop and restart now.");
-		if (!this->stopDeviceIO()) {					// try to stop
-			merror(M_IODEVICE_MESSAGE_DOMAIN, "ITC18 IO could not be stopped.  Stop and restart has failed.");
-			return false;
-		}
+		merror(M_IODEVICE_MESSAGE_DOMAIN,
+               "LabJackU6Device startDeviceIO:  startDeviceIO request was made without first stopping IO, aborting");
+        return false;
 	}
+    
+    // check hardware and restart if necessary
+    setupU6PortsAndRestartIfDead();
 
 	schedule_nodes_lock.lock();
 	
@@ -351,7 +372,7 @@ bool LabJackU6Device::stopDeviceIO(){
 		mprintf("LabJackU6Device: stopDeviceIO");
 	}
 	if (!deviceIOrunning) {
-        merror(M_IODEVICE_MESSAGE_DOMAIN, "stopDeviceIO: already stopped on entry");
+        mwarning(M_IODEVICE_MESSAGE_DOMAIN, "stopDeviceIO: already stopped on entry");
 		return false;
 	}
 	
@@ -440,6 +461,7 @@ void LabJackU6Device::detachPhysicalDevice() {
     assert(ljHandle != NULL); // "Device handle is NULL before attempt to disconnect");
     
     closeUSBConnection(ljHandle);
+    ljHandle = NULL;
 
 }
 
@@ -463,19 +485,16 @@ bool LabJackU6Device::ljU6ConfigPorts(HANDLE Handle) {
     
     if(ehFeedback(Handle, sendDataBuff, 6, &Errorcode, &ErrorFrame, NULL, 0) < 0) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
-        goto cleanup;
+        return false;  
     }
     if(Errorcode) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
-        goto cleanup;
+        return false;
     }
 
     return true;
 
-cleanup:
-    // MH todo: make sure cleanup is bulletproof (it's a bit haphazard now across these ljU6 functions and their callers)
-    closeUSBConnection(Handle);
-    return false;
+    // cleanup now done externally to this function
 }
 
 
@@ -492,15 +511,15 @@ bool LabJackU6Device::ljU6ReadDI(HANDLE Handle, long Channel, long* State) {
     //printf("entering ljU6ReadDI\n"); fflush(stdout);
     if(ehFeedback(Handle, sendDataBuff, 2, &Errorcode, &ErrorFrame, recDataBuff, 1) < 0) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
-        return 0;
+        return false;
     }
     if(Errorcode) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
-        return 0;
+        return false;
     }
     
     *State = (long int)recDataBuff[0];
-    return 1;
+    return true;
 
 }
 
@@ -514,19 +533,15 @@ bool LabJackU6Device::ljU6WriteDI(HANDLE Handle, long Channel, long State) {
 
     if(ehFeedback(Handle, sendDataBuff, 2, &Errorcode, &ErrorFrame, NULL, 0) < 0) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "bug: ehFeedback error, see stdout");  // note we will get a more informative error on stdout
-        goto cleanup;
+        return false;
     }
     if(Errorcode) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "ehFeedback: error with command, errorcode was %d");
-        goto cleanup;
+        return false;
     }
     
     return true;
 
-cleanup:
-    // Should do this in destructor?
-    //closeUSBConnection(ljHandle);  
-    return false;    
 }
 
 
