@@ -18,6 +18,8 @@
             <variable _id="id40009214" tag="maxRewardUs" scope="global" logging="when_changed" default_value="20000" type="integer" persistant="1"></variable>
             <variable _id="id40009230" tag="interRewardIntervalMs" scope="global" logging="when_changed" default_value="200" type="integer" persistant="1"></variable>
             <variable _id="id40009246" tag="maxConsecCorrects" scope="global" logging="when_changed" default_value="1" type="integer" persistant="1"></variable>
+            <variable _id="id41009246" tag="jackpotProb" scope="global" logging="when_changed" default_value="0" type="integer" persistant="1"></variable>
+            <variable _id="id41009246" tag="jackpotRewardSizeUs" scope="global" logging="when_changed" default_value="100000" type="integer" persistant="1"></variable>
         </folder>
         <folder _id="id40009262" tag="Stimuli">
             <variable _id="id40009268" tag="gratingAzimuthDeg" scope="global" logging="when_changed" default_value="0" type="integer" persistant="1"></variable>
@@ -57,6 +59,7 @@
             <variable _id="id40009689" tag="tNRewards" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
             <variable _id="id40009703" tag="tInterRewardIntervalMs" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
             <variable _id="id41009704" tag="tRewardAddPerMsHoldUs" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
+            <variable _id="id41009704" tag="tIsJackpot" scope="global" logging="when_changed" default_value="0" type="integer"></variable>
         </folder>
     </variables>
     <sounds _id="id40009717" tag="Sounds">
@@ -95,6 +98,7 @@
                         <action _id="id40010140" type="assignment" tag="Clear stimulusOn" variable="stimulusOn" value="0"></action>
                         <action _id="id40010152" type="report" tag="Report InterTrial" message="InterTrial"></action>
                         <action _id="id41010152" type="assignment" tag="Compute tRewardAddPerMsHoldUs" variable="tRewardAddPerMsHoldUs" value="(maxRewardUs - minRewardUs) / ( randReqHoldMaxMs )"></action>
+                        <action _id="id42010152" type="assignment" tag="Compute tIsJackpot" variable="tIsJackpot" value="rand(0,1000) &lt; jackpotProb*1000"></action>
                         <transition_marker _id="id40010162" _unmoveable="1" tag="Transitions"></transition_marker>
                         <transition _id="id40010169" type="timer_expired" tag="If Expired, Go To WaitForUp" target="WaitForUp" timer="interTrialTimer"></transition>
                     </task_system_state>
@@ -151,11 +155,10 @@
                         <action _id="id40010658" tag="Report StimOn" full_name="ReportDigital" type="report" message="StimOn (still holding; signaling release ok)"></action>
                         <action _id="id40010670" type="start_timer" tag="Start Too Fast Timer" timer="tooFastTimer" timebase="" duration="tooFastTimeMs" duration_units="ms"></action>
                         <action _id="id40010686" type="start_timer" tag="Start React Timer" timer="reactTimeTimer" timebase="" duration="reactTimeMs" duration_units="ms"></action>
-                        <action _id="id40010702" tag="Report 1" full_name="ReportDigital" type="report" message="Report - 1"></action>
                         <action _id="id40010744" tag="Queue Stimulus" type="queue_stimulus" stimulus="imageStimulus"></action>
-                        <action _id="id40010754" tag="Report 2" full_name="ReportDigital" type="report" message="Report - 2"></action>
+                        <action _id="id40010754" tag="Report 2" full_name="ReportDigital" type="report" message="Stim update before"></action>
                         <action _id="id40010766" tag="Update Stimulus" type="update_stimulus_display"></action>
-                        <action _id="id40010773" tag="Report 4" full_name="ReportDigital" type="report" message="Report - 4"></action>
+                        <action _id="id40010773" tag="Report 4" full_name="ReportDigital" type="report" message="Stim update after"></action>
                         <transition_marker _id="id40010805" _unmoveable="1" tag="Transitions"></transition_marker>
                         <transition _id="id40010813" type="direct" tag="Always Go to CheckTooFastTime" target="CheckTooFastTime"></transition>
                     </task_system_state>
@@ -215,6 +218,10 @@
                         <action _id="id40011281" type="assignment" tag="interRewardInterval minimum to juiceTime" variable="tInterRewardIntervalMs" value="interRewardIntervalMs + ( tTotalRewardTimeUs / 1000 )"></action>
                         <action _id="id40011293" tag="Report Reward" full_name="ReportDigital" type="report" message="-reward-"></action>
                         <action _id="id40011305" type="start_timer" tag="Start interRewardIntervalTimer" timer="interRewardIntervalTimer" timebase="" duration="tInterRewardIntervalMs" duration_units="ms"></action>
+                        <action _id="id40011139" type="if" tag="if Jackpot" condition="tIsJackpot">
+                            <action _id="id40011322" type="assignment" tag="Reward = jackpot" variable="tTotalRewardTimeUs" value="jackpotRewardSizeUs"></action>
+                            <action _id="id40011293" tag="Report" full_name="ReportDigital" type="report" message="** Jackpot reward of $jackpotRewardSizeUs us"></action>
+                        </action>
                         <action _id="id40011322" type="assignment" tag="Start reward" variable="juice" value="tTotalRewardTimeUs"></action>
                         <action _id="id40011334" type="report" tag="Report" message="juice = $juice"></action>
                         <action _id="id40011344" tag="Play reward sound" type="play_sound" sound="rewardSound"></action>
