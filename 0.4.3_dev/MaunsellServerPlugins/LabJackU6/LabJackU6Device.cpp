@@ -301,7 +301,8 @@ bool LabJackU6Device::setupU6PortsAndRestartIfDead() {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "LJU6 found dead!!!  Restarting.  bug: should track this down with LabJack Co.");
         libusb_reset_device((libusb_device_handle *)ljHandle);
         closeUSBConnection(ljHandle);
-        sleep(0.25); // histed: MaunsellMouse1 - 0.1s not enough, 0.2 works, add a little padding
+        //sleep(0.25); // histed: MaunsellMouse1 - 0.1s not enough, 0.2 works, add a little padding
+        sleep(2.0); // histed: Testing!
         mwarning(M_IODEVICE_MESSAGE_DOMAIN, "Sleeping for 250ms after restarting LJU6");  
     
         if( (ljHandle = openUSBConnection(-1)) == NULL) {
