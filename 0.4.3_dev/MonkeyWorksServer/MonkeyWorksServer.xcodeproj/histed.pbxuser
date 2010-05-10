@@ -64,8 +64,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 293985612;
-			PBXWorkspaceStateSaveDate = 293985612;
+			PBXPerProjectTemplateStateSaveDate = 294876569;
+			PBXWorkspaceStateSaveDate = 294876569;
 		};
 		sourceControlManager = 81BCEB631180F4BE00C0AC5B /* Source Control */;
 		userBuildSettings = {
@@ -138,7 +138,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 294097707.217903;
+		modificationTime = 294956146.676031;
 		state = 0;
 		symbolName = attachPhysicalDevice;
 	};
@@ -153,7 +153,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 294097707.238986;
+		modificationTime = 294956146.719888;
 		state = 0;
 		symbolName = "attachPhysicalDevice()";
 	};
@@ -168,7 +168,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 294097707.283985;
+		modificationTime = 294956146.764915;
 		state = 0;
 		symbolName = "LabJackU6Device::attachPhysicalDevice()";
 	};
@@ -183,7 +183,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = "";
-		modificationTime = 294097707.308972;
+		modificationTime = 294956146.818852;
 		state = 0;
 		symbolName = "in LabJackU6Device.cpp at 249";
 	};
