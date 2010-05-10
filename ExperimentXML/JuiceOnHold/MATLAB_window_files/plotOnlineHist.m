@@ -107,18 +107,26 @@ title(sprintf('Correct %d, failed %d, total %d', ...
 
 % 5 - trial length plot
 axH = subplot(spSz{:},4);
+hold on;
 holdStarts = [input.holdStartsMs{:}];
 %pH=semilogy(diff(holdStarts)/1000);
 hSDiffsSec = diff(holdStarts)/1000;
-pH=plot(hSDiffsSec);
-hold on;
-set(pH, 'LineStyle', 'none', ...
+% make outliers a fixed value
+largeIx = hSDiffsSec >= 120;
+hSDiffsSec(largeIx) = 120;
+xs = 1:length(hSDiffsSec);
+pH(1)=plot(xs,hSDiffsSec);
+if sum(largeIx) > 0
+  pH(2) = plot(xs(largeIx),hSDiffsSec(largeIx),'r.');  % outliers
+end
+set(pH(1), 'LineStyle', 'none', ...
         'Marker', 'x');
 %plot(diff(holdStarts)/1000, 'x');
 xlabel('trial number');
 ylabel('trial start time diff (s)');
 xLim = get(gca, 'XLim');
 lH = plot(xLim, 20*[1 1], '--k');
+set(gca,'YLim', [0 121]);
 
 nDiffs = length(hSDiffsSec);
 fN = max(1, nDiffs-5);  % if first 6 trials, start at 1
