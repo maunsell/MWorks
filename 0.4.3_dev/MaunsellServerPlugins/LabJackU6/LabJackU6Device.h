@@ -17,7 +17,7 @@
 #include "labjackusb.h"
 
 #undef VERBOSE_IO_DEVICE
-#define VERBOSE_IO_DEVICE 0  // verbosity level is 0-2, 2 is maximum
+#define VERBOSE_IO_DEVICE 2  // verbosity level is 0-2, 2 is maximum
 
 #define LJU6_DITASK_UPDATE_PERIOD_US 15000    
 #define LJU6_DITASK_WARN_SLOP_US     10000

@@ -179,15 +179,19 @@ bool LabJackU6Device::readDI()
 	}
 
     boost::mutex::scoped_lock lock(ljU6DriverLock);  //printf("lock readDI\n"); fflush(stdout);
-    
+
+    MonkeyWorksTime st = clock->getCurrentTimeUS();
     if (!ljU6ReadDI(ljHandle, LJU6_LEVERPRESS_FIO, &state)) {
         merror(M_IODEVICE_MESSAGE_DOMAIN, "Error reading DI, stopping IO and returning FALSE");
 
         stopDeviceIO();  // We are seeing USB errors causing this, and the U6 doesn't work anyway, so might as well stop the threads
-        Debugger();
+        //Debugger();
         return false;
     }
-    //printf("ReadDI: state %5d, time %10lld\n", state, clock->getCurrentTimeUS()); fflush(stdout);
+    MonkeyWorksTime elT = clock->getCurrentTimeUS()-st;
+    if (elT > 5000) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "readDI time elapsed is %d us!!", elT);
+    }
     
     // software debouncing
 	if (state != lastState) {
@@ -209,13 +213,18 @@ bool LabJackU6Device::readDI()
 // External function for scheduling
 
 void *update_lever(const shared_ptr<LabJackU6Device> &gp){
-	//shared_ptr <Clock> clock = Clock::instance();
-    //MonkeyWorksTime st = clock->getCurrentTimeUS();
+	shared_ptr <Clock> clock = Clock::instance();
+    MonkeyWorksTime st = clock->getCurrentTimeUS();
 
 	gp->updateSwitch();                 
     
     // MH 100429: only time elapsed in this function is in readDI()  (which is 0.7-1.2ms with a fast hub)
     //fprintf(stderr, "update_lever elapsed %10d us\n", clock->getCurrentTimeUS()-st);
+    MonkeyWorksTime elT = clock->getCurrentTimeUS()-st;
+    if (elT > 5000) {
+        merror(M_IODEVICE_MESSAGE_DOMAIN, "update_lever time elapsed is %d us!!", elT);
+    }
+    
 	return(NULL);
 }
 
