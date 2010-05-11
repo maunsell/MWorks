@@ -1,0 +1,19 @@
+<MWElements>
+	<MWElement name="EyeLink Eye Tracking Device">
+		<!-- XPath 2.0 expression defining nodes of this type -->
+		<match_signature>iodevice[@type='eyelink']</match_signature>
+		
+		<!-- Inheritance -->
+		<isa>IODevice</isa>
+		
+		<description>
+			Used for interfacing to an EyeLink.
+			</description>
+		<icon>smallIOFolder</icon>
+		
+		<!-- Payload -->
+		<code>
+			<iodevice tag="EyeLink IO Device" priority="" type="eyelink" data_interval="1ms" pupil_x="0" pupil_y="0" pupil_area="0"/>
+			</code>
+		</MWElement>	
+</MWElements>
