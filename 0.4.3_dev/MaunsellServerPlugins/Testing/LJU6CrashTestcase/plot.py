@@ -8,13 +8,14 @@ import os
 figure()
 
 while True: 
-    os.system("grep Mean /tmp/testcase.log | awk '{print $3}' > /tmp/testcase.nums")
+    os.system("grep Mean /tmp/testcase2.log | awk '{print $3}' > /tmp/testcase.nums")
 
     els = numpy.fromfile('/tmp/testcase.nums', sep="\n");
     clf()
-    plot(els)
-    xlabel('time - 10 second intervals')
-    ylabel('elapsed command-response (us)')
+    timevals = transpose(range(len(els)))
+    plot(timevals / 6.0, els/1000) # 10s intervals
+    xlabel('time - min')
+    ylabel('elapsed command-response (ms)')
     draw()
 
     savefig('/tmp/plot-fig.png', format='png')

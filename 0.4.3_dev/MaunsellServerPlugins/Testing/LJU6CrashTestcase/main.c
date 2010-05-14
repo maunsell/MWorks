@@ -46,13 +46,35 @@ int main (int argc, const char * argv[]) {
     int savedN=0;
     double meanEl;
     int iM;
+    int r;
     
 
     //eDO(ljHandle, LJU6_REWARD_FIO, 0);
     for (i=0; true; i++) {
         t1 = timeUS();
         
-        eDI(ljHandle, 0, &state);
+        // DI
+        r = eDI(ljHandle, 0, &state);
+        if (r < 0) {
+            printf("eDI call failed. Exiting");
+            return r;
+        }
+        
+        // DO high
+        usleep(1000);
+        r = eDO(ljHandle, 1, 1);
+        if (r < 0) {
+            printf("eDO high call failed. Exiting");
+            return r;
+        }
+        
+        // DO low
+        usleep(2000);
+        r = eDO(ljHandle, 1, 0);
+        if (r < 0) {
+            printf("eDO low call failed. Exiting");
+            return r;
+        }
 
         t2 = timeUS();
         if (i % 10 == 0) {
