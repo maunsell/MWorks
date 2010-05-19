@@ -47,6 +47,7 @@ int main (int argc, const char * argv[]) {
     double meanEl;
     int iM;
     int r;
+    double maxEl;
     
 
     //eDO(ljHandle, LJU6_REWARD_FIO, 0);
@@ -60,21 +61,21 @@ int main (int argc, const char * argv[]) {
             return r;
         }
         
-        // DO high
-        usleep(1000);
-        r = eDO(ljHandle, 1, 1);
-        if (r < 0) {
-            printf("eDO high call failed. Exiting");
-            return r;
-        }
+        // // DO high
+        //usleep(1000);
+        //r = eDO(ljHandle, 1, 1);
+        //if (r < 0) {
+        //    printf("eDO high call failed. Exiting");
+        //    return r;
+        //}
         
-        // DO low
-        usleep(2000);
-        r = eDO(ljHandle, 1, 0);
-        if (r < 0) {
-            printf("eDO low call failed. Exiting");
-            return r;
-        }
+        //// DO low
+        //usleep(2000);
+        //r = eDO(ljHandle, 1, 0);
+        //if (r < 0) {
+        //    printf("eDO low call failed. Exiting");
+        //    return r;
+        //}
 
         t2 = timeUS();
         if (i % 10 == 0) {
@@ -88,13 +89,17 @@ int main (int argc, const char * argv[]) {
         // stats, every STATSN trials
         if (i % STATSN == 0 && i>0) {  // not the first time
             meanEl = 0;
+            maxEl = 0;
             for (iM=0; iM<STATSN; iM++) {
                 meanEl = meanEl + savedEl[iM];
+                if (savedEl[iM] > maxEl) {
+                    maxEl = savedEl[iM];
+                }
             }
             meanEl = meanEl/STATSN;
             savedN = 0;
             
-            printf("** Mean %8.1f\n", meanEl);
+            printf("** Mean %8.1f   max %8.1f\n", meanEl, maxEl);
         }
             
         while (timeUS() - t1 < 10000) {
