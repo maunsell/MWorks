@@ -43,6 +43,7 @@ int main (int argc, const char * argv[]) {
     long long t1,t2;
     long state;
     long long savedEl[STATSN+1];
+    long long tStart;
     int savedN=0;
     double meanEl;
     int iM;
@@ -51,6 +52,7 @@ int main (int argc, const char * argv[]) {
     
 
     //eDO(ljHandle, LJU6_REWARD_FIO, 0);
+    tStart = timeUS();
     for (i=0; true; i++) {
         t1 = timeUS();
         
@@ -78,7 +80,7 @@ int main (int argc, const char * argv[]) {
         //}
 
         t2 = timeUS();
-        if (i % 10 == 0) {
+        if (i % 100 == 0) {
             printf("Elapsed %lld us, iter %10lld\n", t2-t1, i);
             fflush(stdout);
         }
@@ -99,12 +101,12 @@ int main (int argc, const char * argv[]) {
             meanEl = meanEl/STATSN;
             savedN = 0;
             
-            printf("** Mean %8.1f   max %8.1f\n", meanEl, maxEl);
+            printf("** Mean %8.1f   max %8.1f  totalElapsedUs %lld\n", meanEl, maxEl, timeUS()-tStart);
         }
             
-        while (timeUS() - t1 < 10000) {
-            usleep(1000);
-        }
+        //while (timeUS() - t1 < 1000) {
+        //    usleep(1000);
+        //}
     }
     
     closeUSBConnection(ljHandle);
