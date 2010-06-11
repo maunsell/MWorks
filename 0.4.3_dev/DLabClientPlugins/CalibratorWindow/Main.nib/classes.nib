@@ -41,9 +41,11 @@
 			<dict>
 				<key>delegate</key>
 				<string>id</string>
+				<key>window</key>
+				<string>NSWindow</string>
 			</dict>
 			<key>SUPERCLASS</key>
-			<string>NSWindowController</string>
+			<string>MWWindowController</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

@@ -58,6 +58,12 @@
 	
     // create a notebook
     notebook = [[MWNotebook alloc] init];
+
+	openPlugins = (NSMutableIndexSet *)[NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] dataForKey:@"MWOpenPlugins"]];
+	
+	if (openPlugins == nil) {
+		openPlugins = [[NSMutableIndexSet alloc] init];
+	}
     
 	// load plugins
 	pluginWindows = [[NSMutableArray alloc] init];
@@ -67,7 +73,7 @@
 		core->startEventListener();
 	#endif
 	
-	
+
     
 	// start updateChangedValues timer
 	#define CONNECTION_CHECK_INTERVAL	0.25
@@ -746,7 +752,7 @@
 				NSLog(@"object = %d", obj);
 				if([obj isKindOfClass:[NSWindowController class]]){
 					controller = (NSWindowController *)obj;
-					[controller loadWindow];
+					[controller window];
 					[pluginWindows addObject:controller];
                     
                     // also, add the window to the grouped_plugin_controller
@@ -764,6 +770,16 @@
 		}
 	}
 	
+	if ([openPlugins count]) {
+		NSUInteger i;
+		for ( i=0; i<[pluginWindows count]; i++)
+		{
+			if ([openPlugins containsIndex:i]) {
+				[self showPlugin:i];
+			}
+		}
+	}
+	
 	NSLog(@"%d plugin windows in instance %d", [pluginWindows count], self);
 }
 
@@ -775,6 +791,7 @@
 - (void)showPlugin:(int)i {
 		NSWindowController *controller = [pluginWindows objectAtIndex:i];
 		[[controller window] orderFront:self];
+		[openPlugins addIndex:(NSUInteger)i];
 }
 
 - (void)showAllPlugins {
@@ -784,6 +801,7 @@
 	for(int i = 0; i < [pluginWindows count]; i++){
 		NSWindowController *controller = [pluginWindows objectAtIndex:i];
 		[[controller window] orderFront:self];
+		[openPlugins addIndex:(NSUInteger)i];
 	}
 
 	NSLog(@"showing all (%d) from instance %d", [pluginWindows count], self);
@@ -803,6 +821,7 @@
 	for(int i = 0; i < [pluginWindows count]; i++){
 		NSWindowController *controller = [pluginWindows objectAtIndex:i];
 		[[controller window] orderOut:self];
+		[openPlugins removeIndex:(NSUInteger)i];
 	}
 }
 
@@ -858,7 +877,7 @@
 	self.experimentLoadMessage = message;
 }
 
-- (void)handleErrorMessageEvent:(MWCocoaEvent *)event{
+- (void)handleErrorMessageEvent:(MWCocoaEvent *)event {
 
 
 	//mw::Data *pl = [event data];
@@ -900,6 +919,27 @@
 	[self setHasExperimentLoadErrors:NO];
 }
 
+
+- (NSMutableIndexSet *)openPlugins
+{
+	return openPlugins;
+}
+
+// Since we don't get notified when a plugin window closes,
+// iterate over the plugin window controllers and record the
+// plugins that are actually open.
+- (void)updateOpenPlugins
+{
+	NSMutableIndexSet *tmpSet = [[NSMutableIndexSet alloc] init];
+	for(int i = 0; i < [pluginWindows count]; i++){
+		NSWindowController *controller = [pluginWindows objectAtIndex:i];
+		if ([[controller window] isVisible]) {
+			[tmpSet addIndex:(NSUInteger)i];
+		}
+	}
+	[openPlugins release];
+	openPlugins = [tmpSet retain];
+}
 
 
 @end

@@ -84,6 +84,8 @@
     NSColor *headerColor;
 	
 	BOOL accumulatingErrors;
+	
+	NSMutableIndexSet *openPlugins;
 }
 
 - (id)initWithAppController:(AppController *)_appController;
@@ -93,7 +95,7 @@
 - (shared_ptr<mw::Client>) coreClient;
 @property(retain) MWCodec *variables;
 - (NSArray *)variableNames;
-@property(assign)	NSArray *errors;
+@property(assign)	NSMutableArray *errors;
 
 @property(copy, readwrite) NSString *errorString;
 
@@ -121,7 +123,7 @@
 // Variable set state
 @property BOOL variableSetLoaded;
 @property(assign, readwrite) NSString *variableSetName;
-@property(assign) NSArray *serversideVariableSetNames;
+@property(assign) NSMutableArray *serversideVariableSetNames;
 
 // Data File state
 @property BOOL dataFileOpen;
@@ -129,7 +131,7 @@
 @property BOOL dataFileOverwrite;
 
 // Protocol state
-@property(assign)	NSArray *protocolNames;
+@property(assign)	NSMutableArray *protocolNames;
 @property(copy, readwrite) NSString *currentProtocolName;
 @property(copy, readwrite) NSString *summaryString;
 
@@ -203,5 +205,7 @@
 - (void)clearAccumulatedErrors;
 
 //- (void)handleMessageEvent:(MWCocoaEvent *)event;
+- (NSMutableIndexSet *)openPlugins;
+- (void)updateOpenPlugins;
 
 @end

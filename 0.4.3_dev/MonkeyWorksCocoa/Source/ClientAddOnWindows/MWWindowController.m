@@ -54,4 +54,25 @@ NSString * PreferenceGroupWindowPositions = @"WindowPositions";
     [[self window] performClose:nil];
 }
 
+/**********************************************************************
+ *                  NSWindow Delegate Methods
+ *********************************************************************/
+
+- (void)windowDidMove:(NSNotification *)notification
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *frameString = NSStringFromRect([[self window] frame]);
+	
+	[defaults setObject:frameString forKey:[self monkeyWorksFrameAutosaveName]];
+	[defaults synchronize];
+}
+
+- (void)windowDidResize:(NSNotification *)notification
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *frameString = NSStringFromRect([[self window] frame]);
+	
+	[defaults setObject:frameString forKey:[self monkeyWorksFrameAutosaveName]];
+	[defaults synchronize];
+}
 @end

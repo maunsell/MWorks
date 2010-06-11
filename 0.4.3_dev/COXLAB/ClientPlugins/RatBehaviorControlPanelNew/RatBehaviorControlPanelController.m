@@ -37,7 +37,7 @@
 	//int code = [event code];
 	//if(code == RESERVED_CODEC_CODE){
 	
-	NSMutableArray *names = [delegate variableNames];
+	NSMutableArray *names = (NSMutableArray *)[delegate variableNames];
 
 	for(int i = 0; i < [names count]; i++){
 		[self willChangeValueForKey:[names objectAtIndex:i]];
@@ -70,5 +70,7 @@
 			forKeyPath:@"variables.LickOutput3"];
 }
 
-
+- (NSString *)monkeyWorksFrameAutosaveName {
+    return @"MonkeyWorksRatBehaviorWindow";
+}
 @end
