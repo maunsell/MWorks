@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.02">
+<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
 		<string key="IBDocument.SystemVersion">9L31a</string>
-		<string key="IBDocument.InterfaceBuilderVersion">670</string>
+		<string key="IBDocument.InterfaceBuilderVersion">680</string>
 		<string key="IBDocument.AppKitVersion">949.54</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
@@ -13,6 +13,15 @@
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+		</object>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+			</object>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="452730273">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -618,8 +627,8 @@
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
-				<string key="NSMinSize">{0, 22}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSFrameAutosaveName">MonkeyWorksMATLABWindow</string>
 			</object>
 			<object class="NSCustomObject" id="947723384">
 				<string key="NSClassName">MWVariableList</string>
@@ -1450,7 +1459,6 @@
 					<string>140.IBPluginDependency</string>
 					<string>140.ImportedFromIB2</string>
 					<string>160.IBEditorWindowLastContentRect</string>
-					<string>160.IBPluginDependency</string>
 					<string>160.IBWindowTemplateEditedContentRect</string>
 					<string>160.ImportedFromIB2</string>
 					<string>160.windowTemplate.hasMinSize</string>
@@ -1481,7 +1489,6 @@
 					<string>199.IBPluginDependency</string>
 					<string>199.ImportedFromIB2</string>
 					<string>226.IBEditorWindowLastContentRect</string>
-					<string>226.IBPluginDependency</string>
 					<string>226.IBWindowTemplateEditedContentRect</string>
 					<string>226.ImportedFromIB2</string>
 					<string>226.windowTemplate.maxSize</string>
@@ -1505,14 +1512,29 @@
 					<string>307.ImportedFromIB2</string>
 					<string>310.IBPluginDependency</string>
 					<string>310.ImportedFromIB2</string>
+					<string>327.IBPluginDependency</string>
+					<string>328.IBPluginDependency</string>
+					<string>329.IBPluginDependency</string>
+					<string>330.IBPluginDependency</string>
+					<string>331.IBPluginDependency</string>
+					<string>332.IBPluginDependency</string>
+					<string>333.IBPluginDependency</string>
+					<string>334.IBPluginDependency</string>
+					<string>335.IBPluginDependency</string>
+					<string>336.IBPluginDependency</string>
+					<string>337.IBPluginDependency</string>
 					<string>337.IBShouldRemoveOnLegacySave</string>
+					<string>338.IBPluginDependency</string>
 					<string>338.IBShouldRemoveOnLegacySave</string>
+					<string>339.IBPluginDependency</string>
 					<string>339.IBShouldRemoveOnLegacySave</string>
+					<string>340.IBPluginDependency</string>
 					<string>340.IBShouldRemoveOnLegacySave</string>
 					<string>343.IBPluginDependency</string>
 					<string>343.ImportedFromIB2</string>
 					<string>366.IBPluginDependency</string>
 					<string>366.ImportedFromIB2</string>
+					<string>367.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1523,10 +1545,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{138, 755}, {487, 201}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{138, 755}, {487, 201}}</string>
 					<reference ref="9"/>
-					<reference ref="9"/>
+					<boolean value="NO"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>
 					<string>{487, 150}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1554,7 +1575,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{198, 679}, {367, 184}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{198, 679}, {367, 184}}</string>
 					<reference ref="9"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -1578,14 +1598,29 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<reference ref="9"/>
-					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1643,7 +1678,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MWMATLABWindowController</string>
-					<string key="superclassName">NSWindowController</string>
+					<string key="superclassName">MWWindowController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
@@ -1665,7 +1700,6 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>delegate</string>
 							<string>logTextView</string>
 							<string>mi</string>
 							<string>scrollToBottomButton</string>
@@ -1674,7 +1708,6 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>NSTextView</string>
 							<string>MATLABInterface</string>
 							<string>NSButton</string>
@@ -1689,7 +1722,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MWMATLABWindowController</string>
-					<string key="superclassName">NSWindowController</string>
+					<string key="superclassName">MWWindowController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>

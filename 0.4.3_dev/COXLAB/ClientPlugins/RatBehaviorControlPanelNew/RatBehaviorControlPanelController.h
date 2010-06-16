@@ -14,8 +14,8 @@ NSString *ACTIVE_STRING = @"Active";
 NSString *DISABLED_STRING = @"Disabled";
 
 
-@interface RatBehaviorControlPanelController : NSWindowController {
-	IBOutlet id delegate;
+@interface RatBehaviorControlPanelController : MWWindowController {
+
 	NSArray *staircaseStates;
 }
 

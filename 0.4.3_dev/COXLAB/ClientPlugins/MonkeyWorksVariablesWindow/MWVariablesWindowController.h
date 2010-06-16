@@ -7,10 +7,10 @@
 #import "MWVariablesDataSource.h"
 
 
-@interface MWVariablesWindowController : NSWindowController {
+@interface MWVariablesWindowController : MWWindowController {
 	IBOutlet MWVariablesDataSource *ds;
 	IBOutlet NSOutlineView *varView;
-	IBOutlet id delegate;
+	//IBOutlet id delegate;
 	id variables;
 }
 

@@ -542,7 +542,7 @@ NSString *percentCorrectPlotIdentifier = @"PercentCorrectLinePlot";
 	
 	// if variables entered by the user was not found in the experiment, issue a warning in the console.
 	if (CorrectCodecCode == -1) {
-		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for success trials: %s was not found.",[[CorrectVariableField stringValue] cString]);
+		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for success trials: %s was not found.",[[CorrectVariableField stringValue] UTF8String]);
 	} else {
 		[delegate registerEventCallbackWithReceiver:self 
 										andSelector:@selector(serviceEvent:)
@@ -551,7 +551,7 @@ NSString *percentCorrectPlotIdentifier = @"PercentCorrectLinePlot";
 	}
 	
 	if (FailureCodecCode == -1) {
-		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for failure trials: %s was not found.",[[FailureVariableField stringValue] cString]);
+		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for failure trials: %s was not found.",[[FailureVariableField stringValue] UTF8String]);
 	} else {
 		[delegate registerEventCallbackWithReceiver:self 
 										andSelector:@selector(serviceEvent:)
@@ -560,7 +560,7 @@ NSString *percentCorrectPlotIdentifier = @"PercentCorrectLinePlot";
 	}
 	
 	if (IgnoredCodecCode == -1) {
-		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for ignored trials: %s was not found.",[[IgnoredVariableField stringValue] cString]);
+		mwarning(M_NETWORK_MESSAGE_DOMAIN, "Variable for ignored trials: %s was not found.",[[IgnoredVariableField stringValue] UTF8String]);
 	} else {
 		[delegate registerEventCallbackWithReceiver:self 
 										andSelector:@selector(serviceEvent:)

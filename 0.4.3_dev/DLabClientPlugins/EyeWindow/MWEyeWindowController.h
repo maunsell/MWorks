@@ -22,13 +22,12 @@ extern NSString  * MWEyeWindowVariableUpdateNotification;
 
 @class MWPlotView;
 
-@interface MWEyeWindowController : NSWindowController {
+@interface MWEyeWindowController : MWWindowController {
     IBOutlet MWPlotView *plotView;
     IBOutlet NSScrollView *scrollView;
 	IBOutlet NSSlider *scaleSlider;
     IBOutlet NSTextField *scaleTextField;
-	IBOutlet id delegate;
-
+	
 	MWEyeWindowOptionController * OptionWindow;
 	
 	// Tag names for the eye data and stimulus announce, use this to find codec number

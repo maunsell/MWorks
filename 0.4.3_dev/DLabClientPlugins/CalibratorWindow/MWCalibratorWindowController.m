@@ -346,4 +346,11 @@
 	}
 }
 
+/*******************************************************************
+ *                MWWindowController Methods
+ *******************************************************************/
+- (NSString *)monkeyWorksFrameAutosaveName {
+    return @"MonkeyWorksCalibratorWindow";
+}
+
 @end

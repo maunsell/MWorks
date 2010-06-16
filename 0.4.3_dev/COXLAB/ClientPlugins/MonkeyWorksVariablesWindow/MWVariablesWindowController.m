@@ -7,6 +7,7 @@
 
 #define VARIABLES_WINDOW_CALLBACK_KEY @"MonkeyWorksVariableWindow callback key"
 
+
 @interface MWVariablesWindowController(PrivateMethods)
 - (void)cacheCodes;
 - (void)populateDataSource;
@@ -24,7 +25,8 @@
 	if([delegate respondsToSelector:@selector(variables)]){
 		variables = [delegate variables];
 	}
-
+	[varView setAutosaveExpandedItems:YES];
+	
 	[NSTimer scheduledTimerWithTimeInterval:0.75
 									 target:self 
 								   selector:@selector(causeDataReload:)
@@ -68,6 +70,7 @@
 	if([event code] == RESERVED_CODEC_CODE) { // new codec arrived
 		[self cacheCodes];
 		[self populateDataSource];
+		[varView expandItem:nil expandChildren:YES];
 	}
 	
 }
@@ -96,10 +99,10 @@
 - (void)populateDataSource {
 	if(delegate != nil) {
 		[ds addRootGroups:[[delegate varGroups] copyWithZone:Nil]];
-		
 		[varView performSelectorOnMainThread:@selector(reloadData)
 								  withObject:nil
-							   waitUntilDone:NO];	
+							   waitUntilDone:NO];
+
 	}
 }
 
@@ -110,7 +113,8 @@
 }
 
 - (void)causeDataReload2:(id)arg {
-		[varView setNeedsDisplayInRect:[varView rectOfColumn:1]];	
+		[varView setNeedsDisplayInRect:[varView rectOfColumn:1]];
+		[varView expandItem:nil expandChildren:YES];
 }
 
 

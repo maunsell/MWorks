@@ -9,7 +9,7 @@
 #define MW_REWARD_WINDOW_VAR_NAME @"Reward Window - var name"
 #define MW_REWARD_WINDOW_SOUND_FILE_NAME @"Reward Window - sound played on reward"
 
-@synthesize delegate;
+
 
 - (void)setDelegate:(id)new_delegate {
 	if(![new_delegate respondsToSelector:@selector(codeForTag:)] ||
@@ -109,6 +109,12 @@
 	NSLog(@"Sound file duration: %5.3fs", [sound_obj duration]);
 }
 
+/*******************************************************************
+ *                MWWindowController Methods
+ *******************************************************************/
+- (NSString *)monkeyWorksFrameAutosaveName {
+    return @"MonkeyWorksRewardWindow";
+}
 
 @end
 

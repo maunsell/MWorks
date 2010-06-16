@@ -281,8 +281,6 @@
 					"-lmx",
 					"-lscarab",
 					"-headerpad_max_install_names",
-					"-rpath",
-					/Library/MonkeyWorks/Matlab/MATLAB/bin/maci,
 				);
 				PRODUCT_NAME = MonkeyWorksMATLABWindow;
 				SKIP_INSTALL = NO;

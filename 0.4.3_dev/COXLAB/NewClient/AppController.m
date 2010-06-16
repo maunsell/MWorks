@@ -436,4 +436,18 @@ MWClientInstance *client_instance = [self modalClientInstanceInCharge];
 	return YES;
 }
 
+
+// Write the open plugin list to the defaults database.
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+	
+	if (modalClientInstanceInCharge != nil) {
+		// Record what plugin windows are open to the defaults database
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		[modalClientInstanceInCharge updateOpenPlugins];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:[modalClientInstanceInCharge openPlugins]] forKey:@"MWOpenPlugins"];
+		[defaults synchronize];
+	}
+	
+}
 @end

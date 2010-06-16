@@ -20,7 +20,7 @@ Copy right 2006 MIT. All rights reserved.
 
 @protocol MWDataEventListenerProtocol;
 
-@interface MWBehavioralWindowController : NSWindowController {
+@interface MWBehavioralWindowController : MWWindowController {
 		
 		// editable text field	(this contains the variable to screen in the data stream)							
 		IBOutlet NSTextField *CorrectVariableField;
@@ -76,8 +76,7 @@ Copy right 2006 MIT. All rights reserved.
 		
 		BOOL VariableCheck;
 		
-		IBOutlet id delegate;
-        IBOutlet NSTextField *addEntryField;
+		IBOutlet NSTextField *addEntryField;
         IBOutlet NSTextView *notebookField;
 }
 

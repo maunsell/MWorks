@@ -241,5 +241,11 @@ NSString * MWEyeWindowVariableUpdateNotification = @"MWEyeWindowVariableUpdateNo
 	}
 }	
 
+/*******************************************************************
+ *                MWWindowController Methods
+ *******************************************************************/
+- (NSString *)monkeyWorksFrameAutosaveName {
+    return @"MonkeyWorksEyeWindow";
+}
 
 @end

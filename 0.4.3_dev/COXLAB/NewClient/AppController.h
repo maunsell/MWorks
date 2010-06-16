@@ -46,7 +46,7 @@
     // Variable Set Fields
     IBOutlet NSTextField *modalNewVariableSetField;
     IBOutlet NSPopUpButton *modalServerSideVariableField;
-    
+    	
 	int preferredWindowHeight;
 	
 	// Plugins

@@ -35,7 +35,7 @@
 		5C6C0ECC0D615F80001787A8 /* TB_Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Stop.tiff; sourceTree = "<group>"; };
 		5C6C0ECD0D615F80001787A8 /* TB_StepOver.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_StepOver.tiff; sourceTree = "<group>"; };
 		5C6C0ECE0D615F80001787A8 /* TB_Continue.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_Continue.tiff; sourceTree = "<group>"; };
-		5C6C0EDF0D616513001787A8 /* RatBehaviorControlPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatBehaviorControlPanelController.h; sourceTree = "<group>"; };
+		5C6C0EDF0D616513001787A8 /* RatBehaviorControlPanelController.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; path = RatBehaviorControlPanelController.h; sourceTree = "<group>"; };
 		5C6C0EE00D616513001787A8 /* RatBehaviorControlPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatBehaviorControlPanelController.m; sourceTree = "<group>"; };
 		5C6C0EF20D61676F001787A8 /* MonkeyWorksCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyWorksCocoa.framework; path = /Library/Frameworks/MonkeyWorksCocoa.framework; sourceTree = "<absolute>"; };
 		5C7A9B200D63E72100C3EE80 /* RatBehaviorControlPanel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RatBehaviorControlPanel.xml; sourceTree = "<group>"; };

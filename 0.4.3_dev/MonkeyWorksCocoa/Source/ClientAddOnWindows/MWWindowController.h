@@ -15,6 +15,7 @@
  * @updated 8/18/05
  * @version 1.0.0
  */
+@class MWNotebook;
 
 #import <Cocoa/Cocoa.h>
 
@@ -41,4 +42,20 @@
  */
 - (void)popWindow;
 
+@end
+@interface NSObject(MWWindowControllerDelegate)
+- (NSMutableArray*)variables;
+- (void)registerEventCallbackWithReceiver:(id)receiver
+							  andSelector:(SEL)selector
+								   andKey:(id)key;
+- (void)registerEventCallbackWithReceiver:(id)receiver
+							  andSelector:(SEL)selector
+								   andKey:(id)key
+						  forVariableCode:(NSNumber *)code;
+- (NSMutableArray *)varGroups;
+- (MWNotebook *)notebook;
+@end
+@interface NSObject(MWNoteBookMethods)
+- (id)init;
+- (void) addEntry:(NSString *)entry;
 @end
