@@ -4,6 +4,7 @@
 
 #include "u6.h"
 #include <stdlib.h>
+#include <errno.h>
 
 u6CalibrationInfo U6_CALIBRATION_INFO_DEFAULT = {
     6,
@@ -1198,8 +1199,15 @@ long ehFeedback(HANDLE hDevice, uint8 *inIOTypesDataBuff, long inIOTypesDataSize
     {
         if(sendChars == 0)
             printf("ehFeedback error : write failed\n");
-        else
-            printf("ehFeedback error : did not write all of the buffer\n");
+        else {
+            printf("ehFeedback error : did not write all of the buffer. sendChars = %d. errno = %d.\n", sendChars, errno);
+            int iB; 
+            for (iB=0; iB<sendDWSize+commandBytes; iB++) {
+                printf("%x ", sendBuff[iB]);
+            }
+            printf("\n");
+        }
+            
         ret = -1;
         goto cleanmem;
     }
